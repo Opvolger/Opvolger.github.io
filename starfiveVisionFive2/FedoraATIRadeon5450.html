@@ -8,10 +8,11 @@
       <meta name="date" content="2023-02-27">
       
       <title>StarFive VisionFive 2 Fedora ATI Radeon 5450</title>
+      <link rel="icon" href="/website-template/favicon.ico">
       <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link rel="stylesheet" target="_blank" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
       <!-- Font-awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!-- Styles -->
       <link rel="stylesheet" href="/website-template/styles.css">
             <!-- Add favicon here -->
@@ -39,7 +40,7 @@
                            <a class="dropdown-item" href="/kodi/npo.html">NPO Uitzending gemist</a>               
                            <a class="dropdown-item" href="/kodi/kanalenlijst-hans.html">De Transponder - Kanalenlijk (Hans)</a>
                            <div class="dropdown-divider"></div>
-                           <a class="dropdown-item" href="/kodi/rtlxl.html">RTLxl (Inactive)</a>
+                           <a class="dropdown-item" href="/kodi/rtlxl.html">(Inactive) RTLxl</a>
                         </div>
                      </li>
                       <li class="nav-item dropdown">
@@ -59,10 +60,10 @@
                       </li> -->
                    </ul>
                    <div class="menu-icons">
-                     <a class="menu-icon" href="https://github.com/Opvolger" target="_blank"><i class="fa fa-github fa-2x"></i></a>
-                     <a class="menu-icon" href="https://www.twitter.com/Opvolger" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+                     <a class="menu-icon" target="_blank" href="https://github.com/Opvolger" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+                     <a class="menu-icon" target="_blank" href="https://www.twitter.com/Opvolger" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
                      <a class="menu-icon" href="mailto:Opvolger@gmail.com"><i class="fa fa-at fa-2x"></i></a>
-                     <a class="menu-icon" href="https://www.linkedin.com/in/bas-magr%C3%A9-67234222/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+                     <a class="menu-icon" target="_blank" href="https://www.linkedin.com/in/bas-magr%C3%A9-67234222/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
                   </div>
 
                    <!-- <form class="form-inline my-2 my-lg-0">
@@ -90,7 +91,7 @@ Debian from the StarFive Team.</p>
 <li>BEYIMEI PCIE Riser-Ver010X GPU Riser, 1X tot 16X (4PIN/6PIN/MOLEX)
 PCIE-verlengkabel, M.2 naar PCI-E Riser Card Bitcoin Litecoin Ethereum.
 This is about 11 EURO on amazon, so no big deal… <a
-href="https://www.amazon.nl/dp/B0BF4PH83Y?ref_=pe_28126711_487767311_302_E_DDE_dt_1">amazon-link</a></li>
+target="_blank" href="https://www.amazon.nl/dp/B0BF4PH83Y?ref_=pe_28126711_487767311_302_E_DDE_dt_1">amazon-link</a></li>
 <li>ATI Radeon 5450, Bought on a Dutch second-hand website, for 10
 EURO.</li>
 <li>An ATX power supply (was still lying around in the house)</li>
@@ -171,7 +172,7 @@ of course be difference on your machine.</p>
 <p>Download the Debian-Image-69 from StarFive VisionFive 2 Support page
 (I used the torrent in the google drive). Download the Fedora RISC-V
 image <code>Fedora-Developer-37-20221130.n.0-nvme.raw.img.xz</code> <a
-href="https://fedoraproject.org/wiki/Architectures/RISC-V/Installing#Download_manually">link</a>
+target="_blank" href="https://fedoraproject.org/wiki/Architectures/RISC-V/Installing#Download_manually">link</a>
 and extract it to Fedora-Developer-37-20221130.n.0-nvme.raw.img</p>
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a loop device of image</span></span>
@@ -245,7 +246,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="
 <p>I build this on my own machine, otherwise it will take a very long
 time. so cross compile! Everything is neatly explained if you click
 through to the “linux” repo of all (yet) custom code for the SBC. <a
-href="https://github.com/starfive-tech/VisionFive2">link</a></p>
+target="_blank" href="https://github.com/starfive-tech/VisionFive2">link</a></p>
 <div class="sourceCode" id="cb4"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir ~/visionfive2</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd visionfive2</span>
@@ -264,7 +265,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="ex">Your</span> branch is up to date with <span class="st">&#39;origin/JH7110_VisionFive2_devel&#39;</span>.</span></code></pre></div>
 <p>Now we have the modified kernel 5.15 that workes with VisionFive 2.
 We can use the instructions of the other branch <a
-href="https://github.com/starfive-tech/linux/tree/JH7110_VisionFive2_upstream">link</a>.
+target="_blank" href="https://github.com/starfive-tech/linux/tree/JH7110_VisionFive2_upstream">link</a>.
 Here and there I deviated a little from it</p>
 <p>I am running Manjaro on got an error. I fixxed it in
 <code>arch/riscv/Makefile</code> on line +/- 56 (find this online).</p>
@@ -645,7 +646,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href=
 <figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>Here you can see the YouTube Demo:</p>
-<p><a href="https://www.youtube.com/watch?v=UuSn_r9PNvM"><img
+<p><a target="_blank" href="https://www.youtube.com/watch?v=UuSn_r9PNvM"><img
 src="https://img.youtube.com/vi/UuSn_r9PNvM/0.jpg"
 alt="YouTube Demo" /></a></p></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
@@ -676,13 +677,13 @@ Quake2</a></li>
             <footer class="footer text-muted">
                 <div align="center">
                    <!-- Update licences -->
-                   Content is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+                   Content is available under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
                    &nbsp;|&nbsp;
-                   Sourcecode licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+                   Sourcecode licensed under <a target="_blank" href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
                    <br />
                    <!-- Please keep the following line -->
-                   Built with <a href="https://www.pandoc.org" target="_blank" rel="noopener">Pandoc</a> 
-                   using <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+                   Built with <a target="_blank" href="https://www.pandoc.org" target="_blank" rel="noopener">Pandoc</a> 
+                   using <a target="_blank" href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
                    <br />
                    <!-- Update copyright -->
                    Copyright, Bas Magr&eacute;

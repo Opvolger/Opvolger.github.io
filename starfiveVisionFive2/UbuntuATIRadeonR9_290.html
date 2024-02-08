@@ -9,10 +9,11 @@
       
       <title>StarFive VisionFive 2 Ubuntu 22.04 ATI Radeon R9
 290</title>
+      <link rel="icon" href="/website-template/favicon.ico">
       <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link rel="stylesheet" target="_blank" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
       <!-- Font-awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!-- Styles -->
       <link rel="stylesheet" href="/website-template/styles.css">
             <!-- Add favicon here -->
@@ -40,7 +41,7 @@
                            <a class="dropdown-item" href="/kodi/npo.html">NPO Uitzending gemist</a>               
                            <a class="dropdown-item" href="/kodi/kanalenlijst-hans.html">De Transponder - Kanalenlijk (Hans)</a>
                            <div class="dropdown-divider"></div>
-                           <a class="dropdown-item" href="/kodi/rtlxl.html">RTLxl (Inactive)</a>
+                           <a class="dropdown-item" href="/kodi/rtlxl.html">(Inactive) RTLxl</a>
                         </div>
                      </li>
                       <li class="nav-item dropdown">
@@ -60,10 +61,10 @@
                       </li> -->
                    </ul>
                    <div class="menu-icons">
-                     <a class="menu-icon" href="https://github.com/Opvolger" target="_blank"><i class="fa fa-github fa-2x"></i></a>
-                     <a class="menu-icon" href="https://www.twitter.com/Opvolger" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+                     <a class="menu-icon" target="_blank" href="https://github.com/Opvolger" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+                     <a class="menu-icon" target="_blank" href="https://www.twitter.com/Opvolger" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
                      <a class="menu-icon" href="mailto:Opvolger@gmail.com"><i class="fa fa-at fa-2x"></i></a>
-                     <a class="menu-icon" href="https://www.linkedin.com/in/bas-magr%C3%A9-67234222/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+                     <a class="menu-icon" target="_blank" href="https://www.linkedin.com/in/bas-magr%C3%A9-67234222/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
                   </div>
 
                    <!-- <form class="form-inline my-2 my-lg-0">
@@ -92,7 +93,7 @@ href="FedoraATIRadeon5450.html">link</a></p>
 <li>BEYIMEI PCIE Riser-Ver010X GPU Riser, 1X tot 16X (4PIN/6PIN/MOLEX)
 PCIE-verlengkabel, M.2 naar PCI-E Riser Card Bitcoin Litecoin Ethereum.
 This is about 11 EURO on amazon, so no big deal… <a
-href="https://www.amazon.nl/dp/B0BF4PH83Y?ref_=pe_28126711_487767311_302_E_DDE_dt_1">amazon-link</a></li>
+target="_blank" href="https://www.amazon.nl/dp/B0BF4PH83Y?ref_=pe_28126711_487767311_302_E_DDE_dt_1">amazon-link</a></li>
 <li>AMD/ATI Hawaii PRO [Radeon R9 290/390], Bought on a Dutch
 second-hand website, for 45 EURO.</li>
 <li>An ATX power supply (was still lying around in the house)</li>
@@ -107,11 +108,11 @@ VisionFive 2 to 2.11.5</h2>
 <p>download:</p>
 <ul>
 <li><a
-href="https://github.com/starfive-tech/VisionFive2/releases/download/VF2_v2.11.5/visionfive2_fw_payload.img">visionfive2_fw_payload.img</a></li>
+target="_blank" href="https://github.com/starfive-tech/VisionFive2/releases/download/VF2_v2.11.5/visionfive2_fw_payload.img">visionfive2_fw_payload.img</a></li>
 <li><a
-href="https://github.com/starfive-tech/VisionFive2/releases/download/VF2_v2.11.5/u-boot-spl.bin.normal.out">u-boot-spl.bin.normal.out</a></li>
+target="_blank" href="https://github.com/starfive-tech/VisionFive2/releases/download/VF2_v2.11.5/u-boot-spl.bin.normal.out">u-boot-spl.bin.normal.out</a></li>
 <li><a
-href="https://github.com/starfive-tech/VisionFive2/releases/download/VF2_v2.11.5/sdcard.img">sdcard.img</a></li>
+target="_blank" href="https://github.com/starfive-tech/VisionFive2/releases/download/VF2_v2.11.5/sdcard.img">sdcard.img</a></li>
 </ul>
 <p>steps:</p>
 <ul>
@@ -131,11 +132,11 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <h2 id="create-sd-card">Create SD-card</h2>
 <p>Download
 <code>ubuntu-22.04.2-preinstalled-server-riscv64+visionfive.img.xz</code>
-from <a href="https://ubuntu.com/download/risc-v">ubuntu</a> Unzip it to
+from <a target="_blank" href="https://ubuntu.com/download/risc-v">ubuntu</a> Unzip it to
 <code>ubuntu-22.04.2-preinstalled-server-riscv64+visionfive.img</code>.</p>
 <p>Download the <code>starfive-jh7110-VF2-SD-wayland.img</code> (202303)
 from StarFive VisionFive 2 Support <a
-href="https://debian.starfivetech.com/">page</a> (I used google
+target="_blank" href="https://debian.starfivetech.com/">page</a> (I used google
 drive).</p>
 <div class="sourceCode" id="cb2"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a loop device of image</span></span>
@@ -270,7 +271,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 <p>I build this on my own machine, otherwise it will take a very long
 time. so cross compile! Everything is neatly explained if you click
 through to the “linux” repo of all (yet) custom code for the SBC. <a
-href="https://github.com/starfive-tech/VisionFive2">link</a></p>
+target="_blank" href="https://github.com/starfive-tech/VisionFive2">link</a></p>
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir ~/visionfive2</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd visionfive2</span>
@@ -328,7 +329,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="
 <p>Now we have the configure a new kernel 5.15 that workes with
 VisionFive 2 and an AMD/ATI Hawaii PRO [Radeon R9 290/390]. We can use
 the instructions of the other branch <a
-href="https://github.com/starfive-tech/linux/tree/JH7110_VisionFive2_upstream">link</a>.
+target="_blank" href="https://github.com/starfive-tech/linux/tree/JH7110_VisionFive2_upstream">link</a>.
 Here and there I deviated a little from it.</p>
 <p>First I tried to use the ATI (old) kernel drivers, because that was
 working with the ATI Radion HD 5450. But I did get text, but not a
@@ -704,13 +705,13 @@ id="toc-install-gcc-13-on-23.04">install gcc 13 on 23.04</a></li>
             <footer class="footer text-muted">
                 <div align="center">
                    <!-- Update licences -->
-                   Content is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+                   Content is available under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
                    &nbsp;|&nbsp;
-                   Sourcecode licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+                   Sourcecode licensed under <a target="_blank" href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
                    <br />
                    <!-- Please keep the following line -->
-                   Built with <a href="https://www.pandoc.org" target="_blank" rel="noopener">Pandoc</a> 
-                   using <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+                   Built with <a target="_blank" href="https://www.pandoc.org" target="_blank" rel="noopener">Pandoc</a> 
+                   using <a target="_blank" href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
                    <br />
                    <!-- Update copyright -->
                    Copyright, Bas Magr&eacute;
