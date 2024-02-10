@@ -563,7 +563,7 @@ class="sourceCode ini"><code class="sourceCode ini"><span id="cb26-1"><a href="#
 <span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="dt">        menuentry &#39;openSUSE Tumbleweed, with Linux 6.8.0-rc3-83-default&#39; --hotkey</span><span class="ot">=</span><span class="st">2 --class opensuse --class gnu-linux --class gnu --class os $menuentry_id_option &#39;gnulinux-6.8.0-rc3-83-default-advanced-c0fea55f&gt;</span></span></code></pre></div>
 <p>Save and Exit</p>
 <h4 id="edit-fstab">Edit fstab</h4>
-<p>I needed this, i think the kernel has no vfat compiled.</p>
+<p>Updates of the efi-boot must not be written on the efi-partition</p>
 <div class="sourceCode" id="cb27"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nano ~/OpenSUSETumbleweed/sd/root/etc/fstab</span></code></pre></div>
 <p>from:</p>
@@ -886,7 +886,38 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href=
 alt="screenshot of OpenSUSE on RISC-V" />
 <figcaption aria-hidden="true">screenshot of OpenSUSE on
 RISC-V</figcaption>
-</figure></div>
+</figure>
+<h2 id="after-updates">After Updates</h2>
+<p>After running updates the system gives my only a grub prompt. I
+fixxed that by recreating the <code>grup.cfg</code> on the EFI
+partition</p>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo mount /dev/sdb1 ~/OpenSUSETumbleweed/sd/efi/</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo blkid</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/sda3:</span> TYPE=<span class="st">&quot;BitLocker&quot;</span> PARTLABEL=<span class="st">&quot;Basic data partition&quot;</span> PARTUUID=<span class="st">&quot;a4305c27-eb7f-4ab2-a711-e6f9420bf175&quot;</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/sda4:</span> BLOCK_SIZE=<span class="st">&quot;512&quot;</span> UUID=<span class="st">&quot;8698031798030581&quot;</span> TYPE=<span class="st">&quot;ntfs&quot;</span> PARTUUID=<span class="st">&quot;5633b16b-b2ed-4f0c-b9f1-38471da05550&quot;</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/sdb1:</span> SEC_TYPE=<span class="st">&quot;msdos&quot;</span> LABEL_FATBOOT=<span class="st">&quot;EFI&quot;</span> LABEL=<span class="st">&quot;EFI&quot;</span> UUID=<span class="st">&quot;9035-7EB0&quot;</span> BLOCK_SIZE=<span class="st">&quot;512&quot;</span> TYPE=<span class="st">&quot;vfat&quot;</span> PARTLABEL=<span class="st">&quot;p.UEFI&quot;</span> PARTUUID=<span class="st">&quot;1efd457e-107c-4159-8ca7-70f808bb0975&quot;</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/sdb3:</span> LABEL=<span class="st">&quot;ROOT&quot;</span> UUID=<span class="st">&quot;c0fea55f-b955-491e-82fb-eef04b20619d&quot;</span> BLOCK_SIZE=<span class="st">&quot;4096&quot;</span> TYPE=<span class="st">&quot;ext4&quot;</span> PARTLABEL=<span class="st">&quot;p.lxroot&quot;</span> PARTUUID=<span class="st">&quot;ae391a45-c12f-48f8-b9af-3c1c5872db1f&quot;</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/sdb5:</span> LABEL=<span class="st">&quot;SWAP&quot;</span> UUID=<span class="st">&quot;9a7b06a0-0385-44c1-8487-8881b55420ab&quot;</span> TYPE=<span class="st">&quot;swap&quot;</span> PARTLABEL=<span class="st">&quot;p.swap&quot;</span> PARTUUID=<span class="st">&quot;59a6c3a5-1cae-47e1-9c14-4899c752c449&quot;</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/zram0:</span> LABEL=<span class="st">&quot;zram0&quot;</span> UUID=<span class="st">&quot;8a74b26d-ba01-4e1e-aaa7-08f769c4d7f2&quot;</span> TYPE=<span class="st">&quot;swap&quot;</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/sdb4:</span> PARTLABEL=<span class="st">&quot;spl&quot;</span> PARTUUID=<span class="st">&quot;3e53f545-ccaa-4ba4-bde8-1bf3826557d9&quot;</span></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/sdb2:</span> PARTLABEL=<span class="st">&quot;uboot&quot;</span> PARTUUID=<span class="st">&quot;a3a77f65-d8e8-4450-a3b2-b06faf72bff2&quot;</span></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/sda2:</span> PARTLABEL=<span class="st">&quot;Microsoft reserved partition&quot;</span> PARTUUID=<span class="st">&quot;44d42eb1-d5aa-47ca-a146-dcb13723529c&quot;</span></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo nano ~/OpenSUSETumbleweed/sd/efi/EFI/BOOT/grub.cfg</span></code></pre></div>
+<p>and set this back: (have a good look if it is the correct UUID my
+/dev/sdb3 == c0fea55f-b955-491e-82fb-eef04b20619d)</p>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode ini"><code class="sourceCode ini"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="dt">set btrfs_relative_path</span><span class="ot">=</span><span class="st">&quot;yes&quot;</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="dt">search --fs-uuid --set</span><span class="ot">=</span><span class="st">root c0fea55f-b955-491e-82fb-eef04b20619d</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="dt">set prefix</span><span class="ot">=</span><span class="st">($root)/boot/grub2</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="dt">source ($root)/boot/grub2/grub.cfg</span></span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo umount ~/OpenSUSETumbleweed/sd/efi/</span></code></pre></div>
+<p>Boot your VisionFive again!</p></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
@@ -906,6 +937,8 @@ SD-card</a></li>
 <li><a href="#boot-the-starfive-visionfive-2"
 id="toc-boot-the-starfive-visionfive-2">Boot the StarFive VisionFive
 2</a></li>
+<li><a href="#after-updates" id="toc-after-updates">After
+Updates</a></li>
 </ul></li>
 </ul></li>
                </ul>
