@@ -111,9 +111,11 @@ kernel</h2>
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd linux-6.11-rc6</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> make CROSS_COMPILE=riscv64-linux-gnu- ARCH=riscv menuconfig</span></code></pre></div>
 <p>Select the next kernel options</p>
-<p>Device Drivers └─&gt;Generic Driver Options └─&gt;Firmware loader ()
-Build named firmware blobs into the kernel binary (../linux-firmware)
-Firmware blobs root directory</p>
+<pre><code>Device Drivers
+└─&gt;Generic Driver Options
+    └─&gt;Firmware loader
+      () Build named firmware blobs into the kernel binary
+      (../linux-firmware) Firmware blobs root directory</code></pre>
 <p>In the
 <code>Build named firmware blobs into the kernel binary</code>, you will
 need to add your blobs of your AMD video card. In my case it was the
@@ -122,106 +124,120 @@ hawaii (R2 290) blobs. For example the 200-series you can find you
 target="_blank" href="https://en.wikipedia.org/wiki/Radeon_200_series">wikipedia</a></p>
 <p>If you do not have the correct blobs, you can see it with the
 commands following after booting:</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> journalctl <span class="at">-b</span> <span class="kw">|</span> <span class="fu">grep</span> radeon</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> journalctl <span class="at">-b</span> <span class="kw">|</span> <span class="fu">grep</span> amdgpu</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> journalctl <span class="at">-b</span> <span class="kw">|</span> <span class="fu">grep</span> firmware</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> journalctl <span class="at">-b</span> <span class="kw">|</span> <span class="fu">grep</span> radeon</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> journalctl <span class="at">-b</span> <span class="kw">|</span> <span class="fu">grep</span> amdgpu</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> journalctl <span class="at">-b</span> <span class="kw">|</span> <span class="fu">grep</span> firmware</span></code></pre></div>
 <p>Than you can change it and rebuild the kernel.</p>
 <p>Change Firmware blobs root directory to
 <code>../linux-firmware</code></p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode ini"><code class="sourceCode ini"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">amdgpu/hawaii_k_smc.bin amdgpu/hawaii_smc.bin amdgpu/hawaii_uvd.bin amdgpu/hawaii_vce.bin amdgpu/hawaii_sdma.bin amdgpu/hawaii_sdma1.bin amdgpu/hawaii_pfp.bin amdgpu/hawaii_me.bin amdgpu/hawaii_ce.bin amdgpu/hawaii_rlc.bin amdgpu/hawaii_mec.bin amdgpu/hawaii_mc.bin</span></span></code></pre></div>
-<p>Device Drivers └─&gt;Block devices &lt;*&gt; RAM block device
-support</p>
-<p>Linux Kernel Configuration └─&gt;Device Drivers └─&gt;Input device
-support └─&gt;Event interface</p>
-<p>Linux Kernel Configuration └─&gt;Device Drivers └─&gt;Graphics
-support └─&gt;Direct Rendering Manager (XFree86 4.1.0 and higher DRI
-support) &lt;<em>&gt; ATI Redeon &lt;</em>&gt; AMD GPU</p>
-<p>Device Drivers └─&gt;Sound card support └─&gt;Advanced Linux Sound
-Architecture └─&gt;HD-Audio &lt;<em>&gt; HD Audio PCI &lt;</em>&gt;
-Build HDMI/DisplayPort HD-audio codec support</p>
-<p>File systems -&gt; [HIT ENTER] └─&gt;Miscellaneous filesystems -&gt;
-[HIT ENTER] └─&gt; &lt;*&gt; SquashFS 4.0 - Squased file system support
-[HIT SPACE 2x] [*] Squashfs XATTR support [HIT SPACE] [*] Include
-support for ZLIB compressed file systems [*] Include support for LZ4
-compressed file systems [HIT SPACE] [*] Include support for LZO
-compressed file systems [HIT SPACE] [*] Include support for XZ
-compressed file systems [HIT SPACE] [*] Include support for ZSTD
-compressed file systems [HIT SPACE]</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode ini"><code class="sourceCode ini"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">amdgpu/hawaii_k_smc.bin amdgpu/hawaii_smc.bin amdgpu/hawaii_uvd.bin amdgpu/hawaii_vce.bin amdgpu/hawaii_sdma.bin amdgpu/hawaii_sdma1.bin amdgpu/hawaii_pfp.bin amdgpu/hawaii_me.bin amdgpu/hawaii_ce.bin amdgpu/hawaii_rlc.bin amdgpu/hawaii_mec.bin amdgpu/hawaii_mc.bin</span></span></code></pre></div>
+<pre><code>Device Drivers
+└─&gt;Block devices
+      &lt;*&gt; RAM block device support
+
+Linux Kernel Configuration
+└─&gt;Device Drivers
+    └─&gt;Input device support
+        └─&gt;Event interface
+
+Linux Kernel Configuration
+└─&gt;Device Drivers
+  └─&gt;Graphics support
+    └─&gt;Direct Rendering Manager (XFree86 4.1.0 and higher DRI support)
+      &lt;*&gt; ATI Redeon
+      &lt;*&gt; AMD GPU
+
+Device Drivers
+└─&gt;Sound card support
+  └─&gt;Advanced Linux Sound Architecture
+    └─&gt;HD-Audio
+        &lt;*&gt; HD Audio PCI
+        &lt;*&gt; Build HDMI/DisplayPort HD-audio codec support
+
+File systems  -&gt; [HIT ENTER]
+└─&gt;Miscellaneous filesystems -&gt; [HIT ENTER]
+  └─&gt; &lt;*&gt; SquashFS 4.0 - Squased file system support [HIT SPACE 2x]
+      [*] Squashfs XATTR support [HIT SPACE]
+      [*] Include support for ZLIB compressed file systems
+      [*] Include support for LZ4 compressed file systems [HIT SPACE]
+      [*] Include support for LZO compressed file systems [HIT SPACE]
+      [*] Include support for XZ compressed file systems [HIT SPACE]
+      [*] Include support for ZSTD compressed file systems [HIT SPACE]</code></pre>
 <p>After all the kernel options, I want to edit the .config file. I only
 want modules in the kernel, so I don’t need a ramdrive (or can use one
 of older kernel).</p>
 <p>I use vscode to edit my .config file. but feel free to use your own
 editor</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> code .config</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> code .config</span></code></pre></div>
 <p>Replace all <code>=m</code> for <code>=y</code>. So all modules will
 be within the kernel.</p>
 <p>Now it is time to build the kernel</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> make ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- <span class="at">-j</span> 16</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> make ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- <span class="at">-j</span> 16</span></code></pre></div>
 <p>This can take a while</p>
 <p>I mounted the eMMC, and the directory is
 <code>/run/media/opvolger/ROOT</code>. So i copy my kernel and dtb to
 <code>/run/media/opvolger/ROOT</code></p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo cp arch/riscv/boot/Image.gz /run/media/opvolger/ROOT/boot/linux6-11-rc6</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo cp arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2-v1.3b.dtb /run/media/opvolger/ROOT/boot/dtb-6.11-rc6</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd /run/media/opvolger/ROOT</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo nano boot.cmd</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo cp arch/riscv/boot/Image.gz /run/media/opvolger/ROOT/boot/linux6-11-rc6</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo cp arch/riscv/boot/dts/starfive/jh7110-starfive-visionfive-2-v1.3b.dtb /run/media/opvolger/ROOT/boot/dtb-6.11-rc6</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd /run/media/opvolger/ROOT</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo nano boot.cmd</span></code></pre></div>
 <p>Now create the boot.cmd, so we don’t have to give this long command
 in u-boot.</p>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode boot.chtml"><code class="sourceCode dosbat"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>load mmc 0:3 ${kernel_addr_r} <span class="at">/boot/linux6-11-rc6</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>load mmc 0:3 ${fdt_addr_r} <span class="at">/boot/dtb-6</span>.11<span class="at">-rc6</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>load mmc 0:3 ${ramdisk_addr_r} <span class="at">/boot/initrd</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>setenv bootargs &#39;root=<span class="at">/dev/mmcblk0p3</span> rw console=tty0 console=ttyS0,115200 earlycon rootwait stmmaceth=chain_mode:1 selinux=0&#39;</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>booti $kernel_addr_r $ramdisk_addr_r:$filesize $fdt_addr_r</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode boot.chtml"><code class="sourceCode dosbat"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>load mmc 0:3 ${kernel_addr_r} <span class="at">/boot/linux6-11-rc6</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>load mmc 0:3 ${fdt_addr_r} <span class="at">/boot/dtb-6</span>.11<span class="at">-rc6</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>load mmc 0:3 ${ramdisk_addr_r} <span class="at">/boot/initrd</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>setenv bootargs &#39;root=<span class="at">/dev/mmcblk0p3</span> rw console=tty0 console=ttyS0,115200 earlycon rootwait stmmaceth=chain_mode:1 selinux=0&#39;</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>booti $kernel_addr_r $ramdisk_addr_r:$filesize $fdt_addr_r</span></code></pre></div>
 <p>create a boot.source:</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo mkimage <span class="at">-C</span> none <span class="at">-A</span> riscv <span class="at">-T</span> script <span class="at">-d</span> boot.cmd boot.scr</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo mkimage <span class="at">-C</span> none <span class="at">-A</span> riscv <span class="at">-T</span> script <span class="at">-d</span> boot.cmd boot.scr</span></code></pre></div>
 <p>We can now unplug the eMMC from the pc and click it to the VisionFive
 2.</p>
 <h2 id="poweron-visionfive-2">Poweron VisionFive 2</h2>
 <p>Poweron you VisionFive 2 after you have make a serial connection.</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> screen <span class="at">-L</span> /dev/ttyUSB0 115200</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> screen <span class="at">-L</span> /dev/ttyUSB0 115200</span></code></pre></div>
 <p>Boot the VisionFive 2 and <code>break</code> the boot process</p>
 <p>Now we can load the boot source we created. We put it on partion 3,
 so we can load.</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode ini"><code class="sourceCode ini"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">load mmc 0:3 ${scriptaddr} boot.scr; source ${scriptaddr}</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode ini"><code class="sourceCode ini"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dt">load mmc 0:3 ${scriptaddr} boot.scr; source ${scriptaddr}</span></span></code></pre></div>
 <p>The first boot will take some time (make root partition bigger
 etc.)</p>
 <p>You can now log in with username root and password linux</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">riscv</span> login: root</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Password:</span> </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Have</span> a lot of fun...</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">riscv</span> login: root</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Password:</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Have</span> a lot of fun...</span></code></pre></div>
 <p>Create an user</p>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a user</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> useradd opvolger</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># set password for user</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> passwd opvolger</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="ex">New</span> password: </span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Retype</span> new password: </span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="ex">passwd:</span> password updated successfully</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># update repo&#39;s</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zypper update</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># install stuff</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zypper install opi neofetch chromium nano libcurl-devel git SDL2-devel git openal-soft-devel libvpx-devel alsa-devel flac-devel</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co"># install codecs (with errors, not all codes are allready on mainline for risc-v) option 2</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> opi codecs</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="co"># install KDE-desktop</span></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zypper install <span class="at">-t</span> pattern kde kde_plasma</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> reboot</span></code></pre></div></div>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a user</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> useradd opvolger</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># set password for user</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> passwd opvolger</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="ex">New</span> password: </span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Retype</span> new password: </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="ex">passwd:</span> password updated successfully</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co"># update repo&#39;s</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zypper update</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co"># install stuff</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zypper install opi neofetch chromium nano libcurl-devel git SDL2-devel git openal-soft-devel libvpx-devel alsa-devel flac-devel</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># install codecs (with errors, not all codes are allready on mainline for risc-v) option 2</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> opi codecs</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="co"># install KDE-desktop</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zypper install <span class="at">-t</span> pattern kde kde_plasma</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> reboot</span></code></pre></div></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
