@@ -143,7 +143,7 @@ eMMC</h2>
 <p>download from the <a
 target="_blank" href="https://cdimage.ubuntu.com/releases/25.04/beta/">site</a> the <a
 target="_blank" href="https://cdimage.ubuntu.com/releases/25.04/beta/ubuntu-25.04-beta-preinstalled-server-riscv64+jh7110.img.xz">image
-24.10</a>.</p>
+25.04</a>.</p>
 <p>I used “balenaEtcher” to flash this to my eMMC (with an USB to eMMC
 adapter).</p>
 <h2
@@ -171,8 +171,8 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">--new</span><span class="op">=</span>2:8192:16383 <span class="at">--change-name</span><span class="op">=</span>2:uboot <span class="at">--typecode</span><span class="op">=</span>2:BC13C2FF-59E6-4262-A352-B275FD6F7172 <span class="dt">\</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    /dev/sdb</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># now &quot;flash&quot; the firmware on the sd-card</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dd if=release/ubuntu-24-10/u-boot-spl.bin.normal.out of=/dev/sdb1</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dd if=release/ubuntu-24-10/u-boot.itb of=/dev/sdb2</span></code></pre></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dd if=release/ubuntu-25-04/u-boot-spl.bin.normal.out of=/dev/sdb1</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dd if=release/ubuntu-25-04/u-boot.itb of=/dev/sdb2</span></code></pre></div>
 <p>If booting ubuntu is not working (you can see it with
 serial-connection for example
 <code>screen -L /dev/ttyUSB0 115200</code>), go back to default settings
