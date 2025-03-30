@@ -95,18 +95,18 @@ AMDGPU</h1> -->
 id="ubuntu-24.10-starfive-visionfive-2-amdgpu">Ubuntu 24.10 StarFive
 VisionFive 2 AMDGPU</h1>
 <p>Ubuntu 24.10 is using the 6.11 kernel. This has the PCI-e controller
-of StarFive VisionFive 2 + AMDGPU drivers that are working with RISC-V.
-So if you have a m2 to pci-e adapter you can now run Ubuntu with AMDGPU
-on RISC-V (without building your own kernel with patches etc.)</p>
-<p>The only problem is now the u-boot that initialize the PCI-e
-controller to scan for m.2 drivers. Some of my AMDPGU do not like that
+of JH7110 SoC + AMDGPU drivers that are working with RISC-V. So if you
+have a M.2 to pci-e adapter you can now run Ubuntu with AMDGPU on RISC-V
+(without building your own kernel with patches etc.)</p>
+<p>The only problem is now the U-boot that initialize the PCI-e
+controller to scan for M.2 drivers. Some of my AMDPGU do not like that
 (fan 100% and not detected anymore in the kernel).</p>
-<p>So we need a u-boot (from Ubuntu) without the initialization of the
-PCI-e controller. I have build that and release the flash-files (u-boot
-+ opensbi) on github.</p>
-<p>So we can now just flash Ubuntu 24.10 to an eMMC, use the custom
+<p>So we need a U-boot (with the patches from Ubuntu) without the
+initialization of the PCI-e controller. I have build that and release
+the flash-files (u-boot + opensbi) on github.</p>
+<p>So we can now just flash Ubuntu 24.10 to an eMMC and use the custom
 flash-files (u-boot + opensbi).</p>
-<p>a lot of AMDGPU’s worked on this setup:</p>
+<p>A lot of my AMDGPU’s worked on this setup:</p>
 <ul>
 <li>ATI Radeon HD 5450 (Cedar PRO)</li>
 <li>ATI Radeon HD 5850 (Cypress PRO)</li>
@@ -119,6 +119,8 @@ flash-files (u-boot + opensbi).</p>
 </ul>
 <p>It is booting, it gives screenoutput (black) and then the system
 hangs completely</p>
+<p>My setup is a SD-card to boot (custom U-boot) and an eMMC for the
+Ubuntu operation system (default Ubuntu kernel and GNU software)</p>
 <h2 id="flash-ubuntu-24.10-to-emmc">Flash Ubuntu 24.10 to eMMC</h2>
 <p>download from the <a
 target="_blank" href="https://ubuntu.com/download/risc-v">site</a> the <a
@@ -136,14 +138,15 @@ controller (scan for m.2 device). Some of the AMDGPU’s don’t like that
 <code>CONFIG_CMD_PCI</code> to n (no).</p>
 <p>I all ready create this builds and they can be found <a
 target="_blank" href="https://github.com/Opvolger/ansible-riscv-sd-card-creater/releases">here</a>:</p>
-<p>Insert you SD-card in you computer</p>
+<p>Insert you SD-card in you computer (this example expect /dev/sdb to
+be your SD-card)</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/Opvolger/ansible-riscv-sd-card-creater/releases/download/0.1.0/release.tgz</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvzf</span> release.tgz</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># check where your SD-card is with lsblk, in this example it is /dev/sdb</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># delete MBR of SD-Card</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dd if=/dev/zero of=/dev/sdb bs=512 count=1 conv=notrunc</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># we will create the needed partitions to boot from SD-card</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># we will create the needed partitions to boot from SD-card (for more information see https://docs.u-boot.org/en/latest/board/starfive/visionfive2.html)</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> sgdisk <span class="at">--clear</span> <span class="dt">\</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set-alignment</span><span class="op">=</span>2 <span class="dt">\</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">--new</span><span class="op">=</span>1:4096:8191 <span class="at">--change-name</span><span class="op">=</span>1:spl <span class="at">--typecode</span><span class="op">=</span>1:2E54B353-1271-4842-806F-E436D6AF6985 <span class="dt">\</span></span>
