@@ -5,9 +5,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="generator" content="pandoc">
       <meta name="author" content="Bas Magré">
-      <meta name="date" content="2025-02-25">
+      <meta name="date" content="2025-03-30">
       
-      <title>StarFive VisionFive 2 Ubuntu 24.10 AMDGPU</title>
+      <title>StarFive VisionFive 2 Ubuntu 25.04 AMDGPU</title>
       <link rel="icon" href="/website-template/favicon.ico">
       <!-- Bootstrap -->
       <link rel="stylesheet" target="_blank" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -88,14 +88,14 @@
                 </div>
              </nav>
             <div class="container">
-         <p class="date">2025-02-25 - Bas Magré</p>
-         <!-- <h1 class="title">StarFive VisionFive 2 Ubuntu 24.10
+         <p class="date">2025-03-30 - Bas Magré</p>
+         <!-- <h1 class="title">StarFive VisionFive 2 Ubuntu 25.04
 AMDGPU</h1> -->
                   <div class="row">
             <div class="col-xl-10"><h1
-id="ubuntu-24.10-starfive-visionfive-2-amdgpu">Ubuntu 24.10 StarFive
-VisionFive 2 AMDGPU</h1>
-<p>Ubuntu 24.10 is using the 6.11 kernel. This has the PCI-e controller
+id="ubuntu-25.04-beta-starfive-visionfive-2-amdgpu">Ubuntu 25.04 (beta)
+StarFive VisionFive 2 AMDGPU</h1>
+<p>Ubuntu 25.04 is using the 6.14 kernel. This has the PCI-e controller
 of JH7110 SoC + AMDGPU drivers that are working with RISC-V. So if you
 have a M.2 to pci-e adapter you can now run Ubuntu with AMDGPU on RISC-V
 (without building your own kernel with patches etc.)</p>
@@ -105,7 +105,7 @@ controller to scan for M.2 drivers. Some of my AMDPGU do not like that
 <p>So we need a U-boot (with the patches from Ubuntu) without the
 initialization of the PCI-e controller. I have build that and release
 the flash-files (u-boot + opensbi) on github.</p>
-<p>So we can now just flash Ubuntu 24.10 to an eMMC and use the custom
+<p>So we can now just flash Ubuntu 25.04 to an eMMC and use the custom
 flash-files (u-boot + opensbi).</p>
 <p>A lot of my AMDGPU’s worked on this setup:</p>
 <ul>
@@ -120,12 +120,29 @@ flash-files (u-boot + opensbi).</p>
 </ul>
 <p>It is booting, it gives screenoutput (black) and then the system
 hangs completely</p>
-<p>My setup is a SD-card to boot (custom U-boot) and an eMMC for the
+<h2 id="hardware-setup">Hardware Setup</h2>
+<p>I have configured my VisionFive 2 to boot from SD-card, see the last
+pages of <a
+target="_blank" href="https://doc-en.rvspace.org/VisionFive2/PDF/VisionFive2_QSG.pdf">this
+document</a>.</p>
+<p>The reason is I very often change u-boot / kernel, so i want them on
+the sd-card. (You can flash the created/downloaded firmware files and
+override the partitions 13 and 2 on the eMMC or flash it to the board.
+But this example will use a SD-card to boot).</p>
+<p>So my setup is a SD-card to boot (custom U-boot) and an eMMC for the
 Ubuntu operation system (default Ubuntu kernel and GNU software)</p>
-<h2 id="flash-ubuntu-24.10-to-emmc">Flash Ubuntu 24.10 to eMMC</h2>
+<p>I have a M.2 to PCI-e board so I can add an AMDGPU on my VisionFive
+2.</p>
+<p>It can look something like this:</p>
+<p><img src="UbuntuATIRadeonR9_290/setup_001.jpeg" alt="img" /> <img
+src="UbuntuATIRadeonR9_290/setup_002.jpeg" alt="img" /> or <img
+src="FedoraATIRadeon5450/setup.png" alt="img" /> or <a
+target="_blank" href="https://www.youtube.com/watch?v=Jp0ZPA4IQGw">youtube video</a></p>
+<h2 id="flash-ubuntu-25.04-beta-to-emmc">Flash Ubuntu 25.04 (beta) to
+eMMC</h2>
 <p>download from the <a
-target="_blank" href="https://ubuntu.com/download/risc-v">site</a> the <a
-target="_blank" href="https://cdimage.ubuntu.com/releases/24.10/release/ubuntu-24.10-preinstalled-server-riscv64+nezha.img.xz">image
+target="_blank" href="https://cdimage.ubuntu.com/releases/25.04/beta/">site</a> the <a
+target="_blank" href="https://cdimage.ubuntu.com/releases/25.04/beta/ubuntu-25.04-beta-preinstalled-server-riscv64+jh7110.img.xz">image
 24.10</a>.</p>
 <p>I used “balenaEtcher” to flash this to my eMMC (with an USB to eMMC
 adapter).</p>
@@ -139,10 +156,10 @@ controller (scan for m.2 device). Some of the AMDGPU’s don’t like that
 <code>CONFIG_CMD_PCI</code> to n (no).</p>
 <p>I all ready create this builds and they can be found <a
 target="_blank" href="https://github.com/Opvolger/ansible-riscv-sd-card-creater/releases">here</a>:</p>
-<p>Insert you SD-card in you computer (this example expect /dev/sdb to
-be your SD-card)</p>
+<p>Insert you SD-card (with GPT-partition-tables) in you computer (this
+example expect /dev/sdb to be your SD-card)</p>
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/Opvolger/ansible-riscv-sd-card-creater/releases/download/0.1.0/release.tgz</span>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/Opvolger/ansible-riscv-sd-card-creater/releases/download/0.2.0/release.tgz</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvzf</span> release.tgz</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># check where your SD-card is with lsblk, in this example it is /dev/sdb</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># delete MBR of SD-Card</span></span>
@@ -172,35 +189,40 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 <h2 id="first-boot-ubuntu">First boot Ubuntu</h2>
 <p>login with ubuntu/ubuntu (you have to change the password!)</p>
 <div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> timedatectl set-timezone Europe/Amsterdam</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># check if the date is correct (now)!</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt upgrade</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># add repo for firefox</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:mozillateam/ppa</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># install what default stuff + install kde + firefox + some c dev tools (so you can compile some stuff)</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install software-properties-common cmake cabextract sddm sddm-theme-breeze kde-standard build-essential libxml2 libcurl4-gnutls-dev neofetch ubuntu-dev-tools libopenal-dev libpng-dev libjpeg-dev libfreetype6-dev libfontconfig1-dev libcurl4-gnutls-dev libsdl2-dev zlib1g-dev libbz2-dev libedit-dev python-is-python3 m4 clang sddm-theme-breeze firefox</span></code></pre></div>
-<p>I did get a configuration i had to fill in:
-<code>Please enter the default mirror you want to be used by pbuilder.</code>
-I hit enter and get the question again, so i filled in:
-<code>http://archive.ubuntu.com/ubuntu</code> and it was installing
-again.</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># now reboot</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> reboot</span></code></pre></div>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set timezone</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> timedatectl set-timezone Europe/Amsterdam</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># check if the date is correct (now)!</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># if not disable ntp sync</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">timedatectl</span> set-ntp false</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># update datetime to current date/time</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">timedatectl</span> set-time <span class="st">&#39;2025-03-30 19:26:50&#39;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># enable ntp sync again</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ex">timedatectl</span> set-ntp true</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># update all packages</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt upgrade</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># add repo for firefox</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:mozillateam/ppa</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># install what default stuff + install kde + firefox + some c dev tools (so you can compile some stuff)</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install software-properties-common cmake cabextract sddm sddm-theme-breeze kde-standard build-essential libxml2 libcurl4-gnutls-dev fastfetch ubuntu-dev-tools libopenal-dev libpng-dev libjpeg-dev libfreetype6-dev libfontconfig1-dev libcurl4-gnutls-dev libsdl2-dev zlib1g-dev libbz2-dev libedit-dev python-is-python3 m4 clang  firefox</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># now reboot</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> reboot</span></code></pre></div>
 <h2 id="done">Done</h2>
 <p>You will now see a KDE desktop login! Good luck and have
 fun!</p></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
-<li><a href="#ubuntu-24.10-starfive-visionfive-2-amdgpu"
-id="toc-ubuntu-24.10-starfive-visionfive-2-amdgpu">Ubuntu 24.10 StarFive
-VisionFive 2 AMDGPU</a>
+<li><a href="#ubuntu-25.04-beta-starfive-visionfive-2-amdgpu"
+id="toc-ubuntu-25.04-beta-starfive-visionfive-2-amdgpu">Ubuntu 25.04
+(beta) StarFive VisionFive 2 AMDGPU</a>
 <ul>
-<li><a href="#flash-ubuntu-24.10-to-emmc"
-id="toc-flash-ubuntu-24.10-to-emmc">Flash Ubuntu 24.10 to eMMC</a></li>
+<li><a href="#hardware-setup" id="toc-hardware-setup">Hardware
+Setup</a></li>
+<li><a href="#flash-ubuntu-25.04-beta-to-emmc"
+id="toc-flash-ubuntu-25.04-beta-to-emmc">Flash Ubuntu 25.04 (beta) to
+eMMC</a></li>
 <li><a
 href="#createdownload-u-boot-without-pci-e-initialization-and-flash-to-sd"
 id="toc-createdownload-u-boot-without-pci-e-initialization-and-flash-to-sd">Create/download
