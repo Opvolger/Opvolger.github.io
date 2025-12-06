@@ -1,0 +1,609 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="generator" content="pandoc">
+      <meta name="author" content="Bas Magré">
+      <meta name="date" content="2025-12-03">
+      
+      <title>StarFive VisionFive 2 Lite U-Boot and Kernel</title>
+      <link rel="icon" href="/website-template/favicon.ico">
+      <!-- Bootstrap -->
+      <link rel="stylesheet" target="_blank" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <!-- Font-awesome -->
+      <link rel="stylesheet" target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- Styles -->
+      <link rel="stylesheet" href="/website-template/styles.css">
+            <!-- Add favicon here -->
+            <!-- Add site-verifications here -->
+         </head>
+   <body>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+                <!--<a class="navbar-brand" href="#">Navbar</a>-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                   <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+                         <a class="nav-link" href="/index.html">Me <span class="sr-only">(current)</span></a>
+                      </li>
+                      <!-- <li class="nav-item">
+                         <a class="nav-link" href="#">Link</a>
+                      </li> -->
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarKODI" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Kodi Addons
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarKODI">
+                           <a class="dropdown-item" href="/kodi/npo.html">NPO Uitzending gemist</a>               
+                           <a class="dropdown-item" href="/kodi/kanalenlijst-hans.html">De Transponder - Kanalenlijk (Hans)</a>
+                           <div class="dropdown-divider"></div>
+                           <a class="dropdown-item" href="/kodi/rtlxl.html">(Inactive) RTLxl</a>
+                        </div>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarPi5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Raspberry Pi 5
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarPi5">
+                           <a class="dropdown-item" href="/raspberrypi5/FedoraATIRadeonR9_290.html">Fedora with AMDGPU playing Half Life 2</a>
+                        </div>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarMilkVJ" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Milk-V Jupiter
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarMilkVJ">
+                           <a class="dropdown-item" href="/milkVjupiter/OpenSUSEATIRadeonR9_290.html">ATI Radeon R9 290 Kernel 6.1</a>
+                           <a class="dropdown-item" href="/milkVjupiter/OpenSUSEATIRadeonHD5850.html">OpenSUSE Tumbleweed ATI Radeon HD 5850 Kernel 6.6</a>
+                        </div>
+                     </li>
+                      <li class="nav-item dropdown">
+                         <a class="nav-link dropdown-toggle" href="#" id="navbarSFVF2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Starfive VisionFive 2
+                         </a>
+                         <div class="dropdown-menu" aria-labelledby="navbarSFVF2">
+                            <a class="dropdown-item" href="/starfiveVisionFive2/UbuntuATIRadeonR9_290.html">Ubuntu 22.04 with ATI Radeon R9 290</a>
+                            <a class="dropdown-item" href="/starfiveVisionFive2/FedoraATIRadeon5450.html">Fedora with ATI Radeon5450</a>
+                            <a class="dropdown-item" href="/starfiveVisionFive2/UbuntuATIRadeonR9_290_2023_11_20.html">Ubuntu 23.10 with ATI Radeon R9 290</a>
+                            <a class="dropdown-item" href="/starfiveVisionFive2/OpenSUSEATIRadeonR9_290.html">OpenSUSE Tumbleweed ATI Radeon R9 290</a>
+                            <a class="dropdown-item" href="/starfiveVisionFive2/OpenSUSEATIRadeonR9_290_mainline.html">OpenSUSE Tumbleweed ATI Radeon R9 290 mainline kernel</a>
+                            <a class="dropdown-item" href="/starfiveVisionFive2/Ubuntu2410_outofthebox.html">StarFive VisionFive 2 Ubuntu 24.10 AMDGPU</a>
+                            <a class="dropdown-item" href="/starfiveVisionFive2/Ubuntu2504_outofthebox.html">StarFive VisionFive 2 Ubuntu 25.04 AMDGPU</a>
+                            <a class="dropdown-item" href="/starfiveVisionFive2/LiteUBootKernel.html">StarFive VisionFive 2 Lite U-Boot and Kernel</a>
+                            <!-- <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a> -->
+                         </div>
+                      </li>
+                      <!-- <li class="nav-item">
+                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                      </li> -->
+                   </ul>
+                   <div class="menu-icons">
+                     <a class="menu-icon" target="_blank" href="https://github.com/Opvolger" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+                     <a class="menu-icon" target="_blank" href="https://www.twitter.com/Opvolger" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+                     <a class="menu-icon" href="mailto:Opvolger@gmail.com"><i class="fa fa-at fa-2x"></i></a>
+                     <a class="menu-icon" target="_blank" href="https://www.linkedin.com/in/bas-magr%C3%A9-67234222/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+                     <a class="menu-icon" target="_blank" href="https://www.youtube.com/@justanotherdevopsguy" target="_blank"><i class="fa fa-youtube fa-2x"></i></a>
+                     <a class="menu-icon" target="_blank" href="https://www.youtube.com/@opvolger" target="_blank"><i class="fa fa-youtube fa-2x"></i></a>
+                  </div>
+
+                   <!-- <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                   </form> -->
+                </div>
+             </nav>
+            <div class="container">
+         <p class="date">2025-12-03 - Bas Magré</p>
+         <!-- <h1 class="title">StarFive VisionFive 2 Lite U-Boot and
+Kernel</h1> -->
+                  <div class="row">
+            <div class="col-xl-10"><h1
+id="starfive-visionfive-2-lite---u-boot-and-kernel-with-external-gpu-ati-radeon-r9-290">StarFive
+VisionFive 2 Lite - U-boot and Kernel with external GPU ATI Radeon R9
+290</h1>
+<p>Where is a new Lite edition of the StarFive VisionFive 2. It is the
+StarFive VisionFive 2 Lite. The form factor is a little bit smaller
+clock speeds is a bit lower, but almost the same. It is now only or
+SD-card or eMMC (soldered) but we have now Bluetooth and WiFi.</p>
+<figure>
+<img src="LiteUBootKernel/lite.jpg" alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>The u-boot and kernel patch is already on the way. Just like the
+StarFive VisionFive 2 (not Lite) is the GPU still not in de mainline
+kernel, but the rest is working.</p>
+<p>So if you don’t want to run a vender Linux kernel/distro, you can run
+a mainline kernel with a patch and a normal rootfs from a distribution
+that already support RISC-V.</p>
+<p>I am on Fedora 43, and needed to install some missing packages (new
+laptop)</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dnf install openssl-devel-engine swig gcc-c++-riscv64-linux-gnu gcc-c++ libmpc-devel gcc-plugin-devel git openal-soft-devel ncurses-devel flex bison gnutls-devel screen</span></code></pre></div>
+<h2 id="building-opensbi">Building OpenSBI</h2>
+<p>v1.7 of OpenSBI has already support for the StarFive VisionFive 2
+Lite.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--branch</span> v1.7 <span class="at">--depth</span><span class="op">=</span>1 https://github.com/riscv-software-src/opensbi.git</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> opensbi</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> CROSS_COMPILE=riscv64-linux-gnu- PLATFORM=generic FW_OPTIONS=0 FW_TEXT_START=0x40000000</span></code></pre></div>
+<h2 id="building-u-boot">Building U-Boot</h2>
+<p>We first get the u-boot code. We do not need al the history, so we
+add depth 1.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--branch</span> v2026.01-rc3 <span class="at">--depth</span><span class="op">=</span>1 https://github.com/u-boot/u-boot.git</span></code></pre></div>
+<p>and apply this <a
+target="_blank" href="https://patchwork.ozlabs.org/project/uboot/list/?series=479346">patch</a></p>
+<p>The website is very slow (timeouts) so i already downloaded the patch
+<a
+target="_blank" href="https://raw.githubusercontent.com/Opvolger/ansible-riscv-sd-card-creater/refs/heads/master/files/jh7110-lite/Re-PATCH-v1-2-9-riscv-dts-starfive-Add-VisionFive-2-Lite-board-device-tree.mbox">Re-PATCH-v1-2-9-riscv-dts-starfive-Add-VisionFive-2-Lite-board-device-tree.mbox</a></p>
+<p>The patch is not working 100%, so we need to fix some stuff. That is
+why i use the reject option with git.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> u-boot</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/Opvolger/ansible-riscv-sd-card-creater/refs/heads/master/files/jh7110-lite/Re-PATCH-v1-2-9-riscv-dts-starfive-Add-VisionFive-2-Lite-board-device-tree.mbox</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> apply <span class="at">--reject</span> <span class="at">--whitespace</span><span class="op">=</span>fix Re-PATCH-v1-2-9-riscv-dts-starfive-Add-VisionFive-2-Lite-board-device-tree.mbox</span></code></pre></div>
+<p>You will see that some patches are rejected:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch dts/upstream/src/riscv/starfive/jh7110-common.dtsi...</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> while searching for:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">assigned-clock-rates</span> = <span class="op">&lt;</span>50000000<span class="op">&gt;</span><span class="kw">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="ex">bus-width</span> = <span class="op">&lt;</span>8<span class="op">&gt;</span><span class="kw">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="ex">bootph-pre-ram</span><span class="kw">;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="ex">cap-mmc-highspeed</span><span class="kw">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="ex">mmc-ddr-1_8v</span><span class="kw">;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="ex">mmc-hs200-1_8v</span><span class="kw">;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="ex">cap-mmc-hw-reset</span><span class="kw">;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="ex">post-power-on-delay-ms</span> = <span class="op">&lt;</span>200<span class="op">&gt;</span><span class="kw">;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="ex">pinctrl-names</span> = <span class="st">&quot;default&quot;</span><span class="kw">;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="ex">pinctrl-0</span> = <span class="op">&lt;&amp;</span>mmc0_pins<span class="op">&gt;</span><span class="kw">;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="ex">vmmc-supply</span> = <span class="op">&lt;&amp;</span>vcc_3v3<span class="op">&gt;</span><span class="kw">;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="ex">vqmmc-supply</span> = <span class="op">&lt;&amp;</span>emmc_vdd<span class="op">&gt;</span><span class="kw">;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="ex">status</span> = <span class="st">&quot;okay&quot;</span><span class="kw">;</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="er">}</span><span class="kw">;</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> patch failed: dts/upstream/src/riscv/starfive/jh7110-common.dtsi:281</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> while searching for:</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        <span class="ex">assigned-clock-rates</span> = <span class="op">&lt;</span>50000000<span class="op">&gt;</span><span class="kw">;</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        <span class="ex">bus-width</span> = <span class="op">&lt;</span>4<span class="op">&gt;</span><span class="kw">;</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        <span class="ex">bootph-pre-ram</span><span class="kw">;</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="ex">no-sdio</span><span class="kw">;</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="ex">no-mmc</span><span class="kw">;</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>        <span class="ex">cd-gpios</span> = <span class="op">&lt;&amp;</span>sysgpio 41 GPIO_ACTIVE_LOW<span class="op">&gt;</span><span class="kw">;</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>        <span class="ex">disable-wp</span><span class="kw">;</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>        <span class="ex">cap-sd-highspeed</span><span class="kw">;</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>        <span class="ex">post-power-on-delay-ms</span> = <span class="op">&lt;</span>200<span class="op">&gt;</span><span class="kw">;</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>        <span class="ex">pinctrl-names</span> = <span class="st">&quot;default&quot;</span><span class="kw">;</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>        <span class="ex">pinctrl-0</span> = <span class="op">&lt;&amp;</span>mmc1_pins<span class="op">&gt;</span><span class="kw">;</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>        <span class="ex">status</span> = <span class="st">&quot;okay&quot;</span><span class="kw">;</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> patch failed: dts/upstream/src/riscv/starfive/jh7110-common.dtsi:299</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="ex">Hunk</span> <span class="co">#3 succeeded at 444 (offset 7 lines).</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch dts/upstream/src/riscv/starfive/jh7110-deepcomputing-fml13v01.dts...</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch dts/upstream/src/riscv/starfive/jh7110-milkv-mars.dts...</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch dts/upstream/src/riscv/starfive/jh7110-pine64-star64.dts...</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch dts/upstream/src/riscv/starfive/jh7110-starfive-visionfive-2.dtsi...</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch dts/upstream/src/riscv/starfive/jh7110.dtsi...</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="ex">Hunk</span> <span class="co">#1 succeeded at 205 (offset 5 lines).</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch arch/riscv/include/asm/arch-jh7110/eeprom.h...</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> while searching for:</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="co">#include &lt;linux/types.h&gt;</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="ex">u8</span> get_pcb_revision_from_eeprom<span class="er">(</span><span class="ex">void</span><span class="kw">);</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="ex">/**</span></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> patch failed: arch/riscv/include/asm/arch-jh7110/eeprom.h:9</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch board/starfive/visionfive2/visionfive2-i2c-eeprom.c...</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> while searching for:</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span><span class="kw">;</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="ex">/**</span></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> get_pcb_revision_from_eeprom <span class="at">-</span> get the PCB revision</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> 1.2A return <span class="st">&#39;A&#39;</span>/<span class="st">&#39;a&#39;</span>, 1.3B return <span class="st">&#39;B&#39;</span>/<span class="st">&#39;b&#39;</span>,other values are illegal</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a> <span class="ex">*/</span></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="ex">u8</span> get_pcb_revision_from_eeprom<span class="er">(</span><span class="ex">void</span><span class="kw">)</span></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span></span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>        <span class="ex">u8</span> pv = 0xFF<span class="kw">;</span></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">(</span><span class="fu">read_eeprom()</span><span class="kw">)</span></span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="ex">pv</span><span class="kw">;</span></span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ex">pbuf.eeprom.atom1.data.pstr[6]</span><span class="kw">;</span></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="ex">u8</span> get_ddr_size_from_eeprom<span class="er">(</span><span class="ex">void</span><span class="kw">)</span></span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> patch failed: board/starfive/visionfive2/visionfive2-i2c-eeprom.c:535</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch configs/starfive_visionfive2_defconfig...</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> while searching for:</span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="va">CONFIG_CMD_BOOTSTAGE</span><span class="op">=</span>y</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a><span class="va">CONFIG_OF_BOARD</span><span class="op">=</span>y</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="va">CONFIG_DEVICE_TREE_INCLUDES</span><span class="op">=</span><span class="st">&quot;starfive-visionfive2-u-boot.dtsi&quot;</span></span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a><span class="va">CONFIG_OF_LIST</span><span class="op">=</span><span class="st">&quot;starfive/jh7110-deepcomputing-fml13v01 starfive/jh7110-milkv-mars starfive/jh7110-pine64-star64 starfive/jh7110-starfive-visionfive-2-v1.2a starfive/jh7110-starfive-visionfive-2-v1.3b&quot;</span></span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="va">CONFIG_MULTI_DTB_FIT</span><span class="op">=</span>y</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a><span class="va">CONFIG_ENV_OVERWRITE</span><span class="op">=</span>y</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a><span class="va">CONFIG_ENV_IS_IN_SPI_FLASH</span><span class="op">=</span>y</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> patch failed: configs/starfive_visionfive2_defconfig:79</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch dts/upstream/src/riscv/starfive/jh7110s-starfive-visionfive-2-lite.dts...</span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch board/starfive/visionfive2/visionfive2-i2c-eeprom.c...</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a><span class="ex">Hunk</span> <span class="co">#7 succeeded at 633 (offset 18 lines).</span></span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch drivers/pci/pcie_starfive_jh7110.c...</span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch board/starfive/visionfive2/spl.c...</span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a><span class="ex">Hunk</span> <span class="co">#1 succeeded at 140 (offset 8 lines).</span></span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch board/starfive/visionfive2/starfive_visionfive2.c...</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a><span class="ex">Hunk</span> <span class="co">#1 succeeded at 69 (offset 6 lines).</span></span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch arch/riscv/cpu/jh7110/spl.c...</span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch arch/riscv/include/asm/arch-jh7110/eeprom.h...</span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> patch board/starfive/visionfive2/visionfive2-i2c-eeprom.c...</span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a><span class="ex">Hunk</span> <span class="co">#1 succeeded at 580 (offset 30 lines).</span></span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a><span class="ex">Applying</span> patch dts/upstream/src/riscv/starfive/jh7110-common.dtsi with 2 rejects...</span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a><span class="ex">Rejected</span> hunk <span class="co">#1.</span></span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a><span class="ex">Rejected</span> hunk <span class="co">#2.</span></span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a><span class="ex">Hunk</span> <span class="co">#3 applied cleanly.</span></span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a><span class="ex">Applied</span> patch dts/upstream/src/riscv/starfive/jh7110-deepcomputing-fml13v01.dts cleanly.</span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a><span class="ex">Applied</span> patch dts/upstream/src/riscv/starfive/jh7110-milkv-mars.dts cleanly.</span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a><span class="ex">Applied</span> patch dts/upstream/src/riscv/starfive/jh7110-pine64-star64.dts cleanly.</span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="ex">Applied</span> patch dts/upstream/src/riscv/starfive/jh7110-starfive-visionfive-2.dtsi cleanly.</span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="ex">Applied</span> patch dts/upstream/src/riscv/starfive/jh7110.dtsi cleanly.</span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a><span class="ex">Applying</span> patch arch/riscv/include/asm/arch-jh7110/eeprom.h with 1 reject...</span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="ex">Rejected</span> hunk <span class="co">#1.</span></span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a><span class="ex">Applying</span> patch board/starfive/visionfive2/visionfive2-i2c-eeprom.c with 1 reject...</span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a><span class="ex">Rejected</span> hunk <span class="co">#1.</span></span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a><span class="ex">Applying</span> patch configs/starfive_visionfive2_defconfig with 1 reject...</span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a><span class="ex">Rejected</span> hunk <span class="co">#1.</span></span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a><span class="ex">Applied</span> patch dts/upstream/src/riscv/starfive/jh7110s-starfive-visionfive-2-lite.dts cleanly.</span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a><span class="ex">Applied</span> patch board/starfive/visionfive2/visionfive2-i2c-eeprom.c cleanly.</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a><span class="ex">Applied</span> patch drivers/pci/pcie_starfive_jh7110.c cleanly.</span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a><span class="ex">Applied</span> patch board/starfive/visionfive2/spl.c cleanly.</span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a><span class="ex">Applied</span> patch board/starfive/visionfive2/starfive_visionfive2.c cleanly.</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a><span class="ex">Applied</span> patch arch/riscv/cpu/jh7110/spl.c cleanly.</span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a><span class="ex">Applied</span> patch arch/riscv/include/asm/arch-jh7110/eeprom.h cleanly.</span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a><span class="ex">Applied</span> patch board/starfive/visionfive2/visionfive2-i2c-eeprom.c cleanly.</span></code></pre></div>
+<p>All the patches that didn’t work are saved in *.rej files. We need to
+see what we need to fix. Lines that where added have a ‘+’ sign what is
+deleted have <code>-</code> sign.</p>
+<p>You can see that this is removed in the reject file
+<code>dts/upstream/src/riscv/starfive/jh7110-common.dtsi.rej</code>, but
+some thinks are already changed.</p>
+<p>We will fix that. Open
+<code>dts/upstream/src/riscv/starfive/jh7110-common.dtsi</code> and
+change (from line 278)</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode ini"><code class="sourceCode ini"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&amp;mmc0 {</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">    max-frequency </span><span class="ot">=</span><span class="st"> &lt;100000000&gt;;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="dt">    assigned-clocks </span><span class="ot">=</span><span class="st"> &lt;&amp;syscrg JH7110_SYSCLK_SDIO0_SDCARD&gt;;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="dt">    assigned-clock-rates </span><span class="ot">=</span><span class="st"> &lt;50000000&gt;;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="dt">    bus-width </span><span class="ot">=</span><span class="st"> &lt;8&gt;;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="dt">    bootph-pre-ram;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="dt">    cap-mmc-highspeed;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="dt">    mmc-ddr-1_8v;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="dt">    mmc-hs200-1_8v;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="dt">    cap-mmc-hw-reset;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="dt">    pinctrl-names </span><span class="ot">=</span><span class="st"> &quot;default&quot;;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="dt">    pinctrl-0 </span><span class="ot">=</span><span class="st"> &lt;&amp;mmc0_pins&gt;;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="dt">    vmmc-supply </span><span class="ot">=</span><span class="st"> &lt;&amp;vcc_3v3&gt;;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="dt">    vqmmc-supply </span><span class="ot">=</span><span class="st"> &lt;&amp;emmc_vdd&gt;;</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="dt">    status </span><span class="ot">=</span><span class="st"> &quot;okay&quot;;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="dt">};</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="dt">&amp;mmc1 {</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="dt">    max-frequency </span><span class="ot">=</span><span class="st"> &lt;100000000&gt;;</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="dt">    assigned-clocks </span><span class="ot">=</span><span class="st"> &lt;&amp;syscrg JH7110_SYSCLK_SDIO1_SDCARD&gt;;</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="dt">    assigned-clock-rates </span><span class="ot">=</span><span class="st"> &lt;50000000&gt;;</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="dt">    bus-width </span><span class="ot">=</span><span class="st"> &lt;4&gt;;</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="dt">    bootph-pre-ram;</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="dt">    cd-gpios </span><span class="ot">=</span><span class="st"> &lt;&amp;sysgpio 41 GPIO_ACTIVE_LOW&gt;;</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="dt">    disable-wp;</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="dt">    cap-sd-highspeed;</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="dt">    pinctrl-names </span><span class="ot">=</span><span class="st"> &quot;default&quot;;</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="dt">    pinctrl-0 </span><span class="ot">=</span><span class="st"> &lt;&amp;mmc1_pins&gt;;</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="dt">    status </span><span class="ot">=</span><span class="st"> &quot;okay&quot;;</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="dt">};</span></span></code></pre></div>
+<p>to</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode ini"><code class="sourceCode ini"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&amp;mmc0 {</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dt">    max-frequency </span><span class="ot">=</span><span class="st"> &lt;100000000&gt;;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="dt">    assigned-clocks </span><span class="ot">=</span><span class="st"> &lt;&amp;syscrg JH7110_SYSCLK_SDIO0_SDCARD&gt;;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="dt">    assigned-clock-rates </span><span class="ot">=</span><span class="st"> &lt;50000000&gt;;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="dt">    bus-width </span><span class="ot">=</span><span class="st"> &lt;8&gt;;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="dt">    bootph-pre-ram;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="dt">    pinctrl-names </span><span class="ot">=</span><span class="st"> &quot;default&quot;;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="dt">    pinctrl-0 </span><span class="ot">=</span><span class="st"> &lt;&amp;mmc0_pins&gt;;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="dt">    status </span><span class="ot">=</span><span class="st"> &quot;okay&quot;;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="dt">};</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&amp;mmc1 {</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="dt">    max-frequency </span><span class="ot">=</span><span class="st"> &lt;100000000&gt;;</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="dt">    assigned-clocks </span><span class="ot">=</span><span class="st"> &lt;&amp;syscrg JH7110_SYSCLK_SDIO1_SDCARD&gt;;</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="dt">    assigned-clock-rates </span><span class="ot">=</span><span class="st"> &lt;50000000&gt;;</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="dt">    bus-width </span><span class="ot">=</span><span class="st"> &lt;4&gt;;</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="dt">    bootph-pre-ram;</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="dt">    cap-sd-highspeed;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="dt">    pinctrl-names </span><span class="ot">=</span><span class="st"> &quot;default&quot;;</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="dt">    pinctrl-0 </span><span class="ot">=</span><span class="st"> &lt;&amp;mmc1_pins&gt;;</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="dt">    status </span><span class="ot">=</span><span class="st"> &quot;okay&quot;;</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="dt">};</span></span></code></pre></div>
+<p>In <code>configs/starfive_visionfive2_defconfig.rej</code> you can
+see that adding the new board to the CONFIG_OF_LIST didn’t work. Other
+board are already added or changed from name!</p>
+<p>So edit <code>configs/starfive_visionfive2_defconfig</code> and
+change the line</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode ini"><code class="sourceCode ini"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">CONFIG_OF_LIST</span><span class="ot">=</span><span class="st">&quot;starfive/jh7110-deepcomputing-fml13v01 starfive/jh7110-milkv-mars starfive/jh7110-milkv-marscm-emmc starfive/jh7110-milkv-marscm-lite starfive/jh7110-pine64-star64 starfive/jh7110-starfive-visionfive-2-v1.2a starfive/jh7110-starfive-visionfive-2-v1.3b&quot;</span></span></code></pre></div>
+<p>to</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode ini"><code class="sourceCode ini"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">CONFIG_OF_LIST</span><span class="ot">=</span><span class="st">&quot;starfive/jh7110-deepcomputing-fml13v01 starfive/jh7110-milkv-mars starfive/jh7110-milkv-marscm-emmc starfive/jh7110-milkv-marscm-lite starfive/jh7110-pine64-star64 starfive/jh7110-starfive-visionfive-2-v1.2a starfive/jh7110-starfive-visionfive-2-v1.3b starfive/jh7110s-starfive-visionfive-2-lite&quot;</span></span></code></pre></div>
+<p>If we open
+<code>arch/riscv/include/asm/arch-jh7110/eeprom.h.rej</code> we see that
+only comment was added. so we ignore this rejected patch.</p>
+<p>Now the last *.rej file
+<code>board/starfive/visionfive2/visionfive2-i2c-eeprom.c.rej</code></p>
+<p>We have to edit
+<code>board/starfive/visionfive2/visionfive2-i2c-eeprom.c</code> from
+line 543</p>
+<p>change</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode ini"><code class="sourceCode ini"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">u8 get_pcb_revision_from_eeprom(void)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dt">{</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="dt">    u8 pv </span><span class="ot">=</span><span class="st"> 0xFF;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="dt">    if (read_eeprom())</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="dt">        return pv;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="dt">    return pbuf.eeprom.atom1.data.pstr</span><span class="kw">[6]</span><span class="dt">;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="dt">}</span></span></code></pre></div>
+<p>to</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode ini"><code class="sourceCode ini"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dt">u8 get_pcb_revision_from_eeprom(void)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="dt">{</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="dt">    if (read_eeprom())</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="dt">        return 0;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="dt">    return pbuf.eeprom.atom4.data.pcb_revision;</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="dt">}</span></span></code></pre></div>
+<p>Now we can build it! We have patch the patch!</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> CROSS_COMPILE=riscv64-linux-gnu- starfive_visionfive2_defconfig</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># if you want to use the PCIe interface for something different then NVMe drive. Disable the PCI in U-Boot.</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="at">-i</span> <span class="at">-e</span> <span class="st">&#39;s/CONFIG_PCI_INIT_R=y/CONFIG_CMD_PCI=n/g&#39;</span> .config</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="at">-i</span> <span class="at">-e</span> <span class="st">&#39;s/CONFIG_PCI_INIT_R=y/CONFIG_PCI_INIT_R=n/g&#39;</span> .config</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="at">-i</span> <span class="at">-e</span> <span class="st">&#39;s/PCI_INIT_R=y/PCI_INIT_R=n/g&#39;</span> .config</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> CROSS_COMPILE=riscv64-linux-gnu- OPENSBI=../opensbi/build/platform/generic/firmware/fw_payload.bin CONFIG_DEFAULT_FDT_FILE=starfive/jh7110s-starfive-visionfive-2-lite.dtb</span></code></pre></div>
+<p>On the question
+<code>Enumerate PCI buses during init (PCI_INIT_R) [N/y/?] (NEW)</code>
+hit Enter.</p>
+<p>Done, it is build!</p>
+<h2 id="kernel-6.18-with-a-patch">Kernel 6.18 with a patch</h2>
+<p>and apply this <a
+target="_blank" href="https://lore.kernel.org/all/20251120082946.109378-1-hal.feng@starfivetech.com/">patch</a></p>
+<p>I uses the github mirror</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we need some firmwares in the kernel</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--depth</span> 1 git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git linux-firmware</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># clone the kernel</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--branch</span> v6.18 <span class="at">--depth</span><span class="op">=</span>1 https://github.com/torvalds/linux.git</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> linux</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://lore.kernel.org/all/20251120082946.109378-1-hal.feng@starfivetech.com/t.mbox.gz</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> <span class="at">-d</span> t.mbox.gz</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> apply <span class="at">--reject</span> <span class="at">--whitespace</span><span class="op">=</span>fix t.mbox</span></code></pre></div>
+<p>Just like U-boot, some files are rejected. But the changes are in the
+code. (I think double patches are in the t.mbox file). So nothing to do!
+Config en build the kernel!</p>
+<p>Generate a .config file from the the default defconfig for
+RISC-V.</p>
+<p>Change the config file so we don’t need modules.</p>
+<p>I add the firmware needed for the Radeon R9 290 and add enable some
+kernel features.</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- defconfig <span class="at">-j</span> 16</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># don&#39;t make modules, add everything in the kernel</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="at">-i</span> <span class="at">-e</span> <span class="st">&#39;s/=m/=y/g&#39;</span> .config</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add some stuff to build</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;&gt;</span> .config <span class="op">&lt;&lt; EOL</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="st"># firmware in kernel</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_EXTRA_FIRMWARE=&quot;amdgpu/hawaii_k_smc.bin amdgpu/hawaii_smc.bin amdgpu/hawaii_uvd.bin amdgpu/hawaii_vce.bin amdgpu/hawaii_sdma.bin amdgpu/hawaii_sdma1.bin amdgpu/hawaii_pfp.bin amdgpu/hawaii_me.bin amdgpu/hawaii_ce.bin amdgpu/hawaii_rlc.bin amdgpu/hawaii_mec.bin amdgpu/hawaii_mc.bin radeon/hawaii_pfp.bin radeon/hawaii_me.bin radeon/hawaii_ce.bin radeon/hawaii_mec.bin radeon/hawaii_mc.bin radeon/hawaii_rlc.bin radeon/hawaii_sdma.bin radeon/hawaii_smc.bin radeon/hawaii_k_smc.bin radeon/HAWAII_pfp.bin radeon/HAWAII_me.bin radeon/HAWAII_ce.bin radeon/HAWAII_mec.bin radeon/HAWAII_mc.bin radeon/HAWAII_mc2.bin radeon/HAWAII_rlc.bin radeon/HAWAII_sdma.bin radeon/HAWAII_smc.bin&quot;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_EXTRA_FIRMWARE_DIR=&quot;../linux-firmware&quot;</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="st"># AMDGPU + HDMI sound</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_DRM_AMDGPU=y</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_DRM_AMD_DC=y</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_DRM_AMD_DC_FP=y</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SND_DYNAMIC_MINORS=y</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SND_MAX_CARDS=32</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SND_VMASTER=y</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SND_HDA=y</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SND_HDA_INTEL=y</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SND_HDA_CODEC_HDMI=y</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SND_HDA_POWER_SAVE_DEFAULT=0</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SND_HDA_CORE=y</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SND_HDA_COMPONENT=y</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SND_INTEL_NHLT=y</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SND_INTEL_DSP_CONFIG=y</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SND_INTEL_SOUNDWIRE_ACPI=y</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="st"># needed for ubuntu (snap):</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SQUASHFS=y</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SQUASHFS_FILE_CACHE=y</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SQUASHFS_DECOMP_SINGLE=y</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SQUASHFS_COMPILE_DECOMP_SINGLE=y</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SQUASHFS_ZLIB=y</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SQUASHFS_LZ4=y</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SQUASHFS_LZO=y</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SQUASHFS_XZ=y</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SQUASHFS_ZSTD=y</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_SQUASHFS_FRAGMENT_CACHE_SIZE=3</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a><span class="st"># needed for Fedora (zram)</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_BLK_DEV_RAM=y</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_BLK_DEV_RAM_COUNT=16</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_BLK_DEV_RAM_SIZE=4096</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZRAM=y</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZRAM_DEF_COMP_LZ4=y</span></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZRAM_DEF_COMP=&quot;lz4&quot;</span></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZRAM_BACKEND_LZ4=y</span></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZRAM_BACKEND_LZ4HC=y</span></span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZRAM_BACKEND_ZSTD=y</span></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZRAM_BACKEND_DEFLATE=y</span></span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZRAM_BACKEND_842=y</span></span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZRAM_BACKEND_LZO=y</span></span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZRAM_MULTI_COMP=y</span></span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZRAM_WRITEBACK=y</span></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZSMALLOC_STAT=y</span></span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZSMALLOC_CHAIN_SIZE=8</span></span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a><span class="st">CONFIG_ZRAM_MEMORY_TRACKING=y</span></span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a><span class="op">EOL</span></span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a><span class="co"># open menu config and save the config again (default will be set)</span></span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- menuconfig <span class="at">-j</span> 16</span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a><span class="co"># now build</span></span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- <span class="at">-j</span> 16</span></code></pre></div>
+<h2 id="create-bootable-sd-card">Create bootable SD-Card</h2>
+<p>So we now have a compiled U-boot. Time to put it on a SD-Card
+(partitiontable must be GPT not MBR)</p>
+<p>I will create the default 2 SPL/U-Boot partitions and a bigger one so
+we can put the kernel on it.</p>
+<p>On my machine my SD-Card reader is on /dev/sda so:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create the correct boot partitions to boot (needs sudo)</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> sgdisk <span class="at">--clear</span> <span class="dt">\</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--set-alignment</span><span class="op">=</span>2 <span class="dt">\</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">--new</span><span class="op">=</span>1:4096:8191 <span class="at">--change-name</span><span class="op">=</span>1:spl <span class="at">--typecode</span><span class="op">=</span>1:2E54B353-1271-4842-806F-E436D6AF6985 <span class="dt">\</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--new</span><span class="op">=</span>2:8192:16383 <span class="at">--change-name</span><span class="op">=</span>2:uboot <span class="at">--typecode</span><span class="op">=</span>2:BC13C2FF-59E6-4262-A352-B275FD6F7172 <span class="dt">\</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">--new</span><span class="op">=</span>3:16384:100M <span class="at">--change-name</span><span class="op">=</span>3:boot <span class="at">--typecode</span><span class="op">=</span>3:BC13C2FF-59E6-4262-A352-B275FD6F7173 <span class="dt">\</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    /dev/sda</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># format the boot partition</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkfs.ext4 /dev/sda3</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># now put the firmware on partition 1 and 2</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dd if=u-boot/spl/u-boot-spl.bin.normal.out of=/dev/sda1</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dd if=u-boot/u-boot.itb of=/dev/sda2</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co"># now mount and copy the boot files from debian to the 3th partition</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> /tmp/mnt</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mount /dev/sda3 /tmp/mnt</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir /tmp/mnt/starfive</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp linux/arch/riscv/boot/dts/starfive/jh7110s-starfive-visionfive-2-lite.dtb /tmp/mnt/starfive/jh7110s-starfive-visionfive-2-lite.dtb</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp linux/arch/riscv/boot/Image /tmp/mnt/Image</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> umount /dev/sda3</span></code></pre></div>
+<h2 id="run-u-boot-and-the-kernel">Run U-Boot and the kernel</h2>
+<p>Put the SD-Card in the StarFive VisionFive 2 Lite.</p>
+<p>Lets Boot!</p>
+<p>I have a serial connection to my
+<code>StarFive VisionFive 2 Lite</code>. (start a serial connection for
+example with <code>screen -L /dev/ttyUSB0 115200</code>, how to connect
+to serial see this <a
+target="_blank" href="https://doc-en.rvspace.org/VisionFive2Lite/PDF/VisionFive2_Lite_QSG.pdf">pdf</a>)</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">load</span> mmc 0:3 <span class="va">${kernel_addr_r}</span> /Image</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">load</span> mmc 0:3 <span class="va">${fdt_addr_r}</span> /starfive/jh7110s-starfive-visionfive-2-lite.dtb</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="ex">setenv</span> bootargs <span class="st">&#39;&#39;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># and boot!</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="ex">booti</span> <span class="va">$kernel_addr_r</span> <span class="at">-</span> <span class="va">$fdt_addr_r</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># now it will panic kernel, there is no rootfs!</span></span></code></pre></div>
+<h2 id="boot-debain-trixie-setup">Boot Debain Trixie Setup</h2>
+<p>For example, we can start the <code>initramfs</code> from the
+debian-trixie setup.</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get initramfs for the setup</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> http://ftp.debian.org/debian/dists/trixie/main/installer-riscv64/current/images/netboot/debian-installer/riscv64/initrd.gz</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mount SD-Card to /tmp/mnt</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mount /dev/sda3 /tmp/mnt</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># copy it to the SD-Card</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp initrd.gz /tmp/mnt/initrd.gz</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> umount /dev/sda3</span></code></pre></div>
+<p>Download the <a
+target="_blank" href="https://cdimage.debian.org/cdimage/trixie_di_rc1/riscv64/iso-dvd/debian-trixie-DI-rc1-riscv64-DVD-1.iso">debian-trixie-DI-rc1-riscv64-DVD-1.iso</a>,
+but the debian-trixie-DI-rc1-riscv64-DVD-1.iso on USB. I used
+balenaEtcher to flash the iso on a USB device.</p>
+<p>Put the USB with the iso on an USB-slot and put the SD-Card in the
+SD-Card slot.</p>
+<p>Connect to the board with a serail connection</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">load</span> mmc 0:3 <span class="va">${kernel_addr_r}</span> /Image</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">load</span> mmc 0:3 <span class="va">${fdt_addr_r}</span> /starfive/jh7110s-starfive-visionfive-2-lite.dtb</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ex">load</span> mmc 0:3 <span class="va">${ramdisk_addr_r}</span> /initrd.gz</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># we don&#39;t need bootargs</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="ex">setenv</span> bootargs <span class="st">&#39;&#39;</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># and boot!</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="ex">booti</span> <span class="va">$kernel_addr_r</span> <span class="va">$ramdisk_addr_r</span>:<span class="va">$filesize</span> <span class="va">$fdt_addr_r</span></span></code></pre></div>
+<p>Welcome in the setup of Debian. You kan install Debian on a new
+partition, for example a new partition 4. After the setup you can boot
+with:</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">load</span> mmc 0:3 <span class="va">${kernel_addr_r}</span> /Image</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">load</span> mmc 0:3 <span class="va">${fdt_addr_r}</span> /starfive/jh7110s-starfive-visionfive-2-lite.dtb</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">load</span> mmc 0:4 <span class="va">${ramdisk_addr_r}</span> /boot/initrd.img</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># we will use partition 4 as rootfs</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="ex">setenv</span> bootargs <span class="st">&#39;root=/dev/mmcblk0p4&#39;</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># and boot!</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="ex">booti</span> <span class="va">$kernel_addr_r</span> <span class="va">$ramdisk_addr_r</span>:<span class="va">$filesize</span> <span class="va">$fdt_addr_r</span></span></code></pre></div></div>
+            <div class="d-none d-xl-block col-xl-2 bd-toc">
+               <ul class="section-nav">
+                  <li class="toc-entry"><ul>
+<li><a
+href="#starfive-visionfive-2-lite---u-boot-and-kernel-with-external-gpu-ati-radeon-r9-290"
+id="toc-starfive-visionfive-2-lite---u-boot-and-kernel-with-external-gpu-ati-radeon-r9-290">StarFive
+VisionFive 2 Lite - U-boot and Kernel with external GPU ATI Radeon R9
+290</a>
+<ul>
+<li><a href="#building-opensbi" id="toc-building-opensbi">Building
+OpenSBI</a></li>
+<li><a href="#building-u-boot" id="toc-building-u-boot">Building
+U-Boot</a></li>
+<li><a href="#kernel-6.18-with-a-patch"
+id="toc-kernel-6.18-with-a-patch">Kernel 6.18 with a patch</a></li>
+<li><a href="#create-bootable-sd-card"
+id="toc-create-bootable-sd-card">Create bootable SD-Card</a></li>
+<li><a href="#run-u-boot-and-the-kernel"
+id="toc-run-u-boot-and-the-kernel">Run U-Boot and the kernel</a></li>
+<li><a href="#boot-debain-trixie-setup"
+id="toc-boot-debain-trixie-setup">Boot Debain Trixie Setup</a></li>
+</ul></li>
+</ul></li>
+               </ul>
+            </div>
+         </div>
+               </div>
+            <!-- Add comment hosting service here -->
+            <!-- Footer -->
+            <footer class="footer text-muted">
+                <div align="center">
+                   <!-- Update licences -->
+                   Content is available under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+                   &nbsp;|&nbsp;
+                   Sourcecode licensed under <a target="_blank" href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+                   <br />
+                   <!-- Please keep the following line -->
+                   Built with <a target="_blank" href="https://www.pandoc.org" target="_blank" rel="noopener">Pandoc</a> 
+                   using <a target="_blank" href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+                   <br />
+                   <!-- Update copyright -->
+                   Copyright, Bas Magr&eacute;
+                </div>
+             </footer>
+             <!-- Add global site tag (gtag.js) and site analytics here -->
+            <!-- JS, Popper.js, and jQuery -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      <!-- Mathjax -->
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script>
+         /* Bootstrap styles to tables */
+         function bootstrapStylePandocTables() {
+         $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
+         $(document).ready(function () { bootstrapStylePandocTables(); });
+         /* Adjust the height when click the toc */
+         var shiftWindow = function() { scrollBy(0, -60) };
+         window.addEventListener("hashchange", shiftWindow);
+         function load() { if (window.location.hash) shiftWindow(); }
+      </script>
+   </body>
+</html>
