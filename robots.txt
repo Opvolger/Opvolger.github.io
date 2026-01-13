@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://demo.k8s.babelvis.io/sitemap.xml

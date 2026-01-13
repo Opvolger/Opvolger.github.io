@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hack on Opvolger</title>
+    <link>https://demo.k8s.babelvis.io/tags/hack/</link>
+    <description>Recent content in Hack on Opvolger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
+    <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
+    <copyright>© 2026 Bas Magré</copyright>
+    <lastBuildDate>Tue, 01 Jan 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/hack/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>KODI Addons - NPO Uitzending gemist</title>
+      <link>https://demo.k8s.babelvis.io/kodi/npo/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/kodi/npo/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

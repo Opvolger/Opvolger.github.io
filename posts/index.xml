@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Opvolger</title>
+    <link>https://demo.k8s.babelvis.io/posts/</link>
+    <description>Recent content in Posts on Opvolger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
+    <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
+    <copyright>© 2026 Bas Magré</copyright>
+    <lastBuildDate>Wed, 03 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>StarFive VisionFive 2 Lite - U-boot and Kernel with external GPU ATI Radeon R9 290</title>
+      <link>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-03-liteubootkernel/</link>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-03-liteubootkernel/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-03-liteubootkernel/cover.jpg" />
+    </item>
+    
+    <item>
+      <title>Raspberry Pi 5 - Fedora with AMDGPU and Halflife 2</title>
+      <link>https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedoraatiradeonr9_290/</link>
+      <pubDate>Sun, 09 Nov 2025 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedoraatiradeonr9_290/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedoraatiradeonr9_290/cover.jpg" />
+    </item>
+    
+    <item>
+      <title>Pinebook Pro - Fedora setup</title>
+      <link>https://demo.k8s.babelvis.io/posts/pipebook-pro/2025-07-07-fedora-fix-after-install/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/pipebook-pro/2025-07-07-fedora-fix-after-install/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>StarFive VisionFive 2 - Debian Trixie with external AMDGPU</title>
+      <link>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-06-09-debiantrixieamdgpu/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-06-09-debiantrixieamdgpu/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-06-09-debiantrixieamdgpu/cover.jpeg" />
+    </item>
+    
+    <item>
+      <title>StarFive VisionFive 2 - Ubuntu 25.04 (beta) AMDGPU</title>
+      <link>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-03-30-ubuntu2504_outofthebox/</link>
+      <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-03-30-ubuntu2504_outofthebox/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-03-30-ubuntu2504_outofthebox/cover.png" />
+    </item>
+    
+    <item>
+      <title>StarFive VisionFive 2 - Ubuntu 24.10 AMDGPU</title>
+      <link>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-02-25-ubuntu2410_outofthebox/</link>
+      <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-02-25-ubuntu2410_outofthebox/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>RISC-V - Compile halflife on RISC-V</title>
+      <link>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-01-31-halflife/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-01-31-halflife/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-01-31-halflife/cover.jpg" />
+    </item>
+    
+    <item>
+      <title>Milk-V Jupiter - OpenSUSE Tumbleweed with dedicated GPU ATI Radeon HD 5850</title>
+      <link>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonhd5850/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonhd5850/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonhd5850/cover.png" />
+    </item>
+    
+    <item>
+      <title>Milk-V Jupiter - OpenSUSE Tumbleweed with external GPU ATI Radeon R9 290</title>
+      <link>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonr9_290/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonr9_290/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonr9_290/cover.jpeg" />
+    </item>
+    
+    <item>
+      <title>StarFive VisionFive 2 - 6.11-rc6 with external GPU</title>
+      <link>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2024-09-02-opensuseatiradeonr9_290_mainline/</link>
+      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2024-09-02-opensuseatiradeonr9_290_mainline/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>StarFive VisionFive 2 - Ubuntu 23.10 external GPU ATI Radeon R9 290</title>
+      <link>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-11-20-ubuntuatiradeonr9_290_2023_11_20/</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-11-20-ubuntuatiradeonr9_290_2023_11_20/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-11-20-ubuntuatiradeonr9_290_2023_11_20/cover.png" />
+    </item>
+    
+    <item>
+      <title>Xiaomi POCO F1 - K3S Cluster on postmarketos</title>
+      <link>https://demo.k8s.babelvis.io/posts/xiaomi-poco-f1/2023-10-31-k3s-on-arm-postmarketos/</link>
+      <pubDate>Tue, 31 Oct 2023 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/xiaomi-poco-f1/2023-10-31-k3s-on-arm-postmarketos/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>StarFive VisionFive 2 - Ubuntu 22.04 external GPU ATI Radeon R9 290</title>
+      <link>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-04-05-ubuntuatiradeonr9_290/</link>
+      <pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-04-05-ubuntuatiradeonr9_290/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-04-05-ubuntuatiradeonr9_290/cover.png" />
+    </item>
+    
+    <item>
+      <title>StarFive VisionFive 2 - Fedora 37 external GPU ATI Radeon 5450 running Quake2</title>
+      <link>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-02-27-fedoraatiradeon5450/</link>
+      <pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-02-27-fedoraatiradeon5450/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-02-27-fedoraatiradeon5450/cover.jpeg" />
+    </item>
+    
+    <item>
+      <title>StarFive VisionFive 2 - OpenSUSE Tumbleweed with external GPU ATI Radeon R9 290</title>
+      <link>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/cover.png" />
+    </item>
+    
+  </channel>
+</rss>

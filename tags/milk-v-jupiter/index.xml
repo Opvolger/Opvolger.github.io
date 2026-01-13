@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Milk-v-Jupiter on Opvolger</title>
+    <link>https://demo.k8s.babelvis.io/tags/milk-v-jupiter/</link>
+    <description>Recent content in Milk-v-Jupiter on Opvolger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
+    <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
+    <copyright>© 2026 Bas Magré</copyright>
+    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/milk-v-jupiter/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Milk-V Jupiter - OpenSUSE Tumbleweed with dedicated GPU ATI Radeon HD 5850</title>
+      <link>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonhd5850/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonhd5850/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonhd5850/cover.png" />
+    </item>
+    
+    <item>
+      <title>Milk-V Jupiter - OpenSUSE Tumbleweed with external GPU ATI Radeon R9 290</title>
+      <link>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonr9_290/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonr9_290/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonr9_290/cover.jpeg" />
+    </item>
+    
+  </channel>
+</rss>

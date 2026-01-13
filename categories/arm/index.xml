@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ARM on Opvolger</title>
+    <link>https://demo.k8s.babelvis.io/categories/arm/</link>
+    <description>Recent content in ARM on Opvolger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
+    <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
+    <copyright>© 2026 Bas Magré</copyright>
+    <lastBuildDate>Sun, 09 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/categories/arm/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Raspberry Pi 5 - Fedora with AMDGPU and Halflife 2</title>
+      <link>https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedoraatiradeonr9_290/</link>
+      <pubDate>Sun, 09 Nov 2025 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedoraatiradeonr9_290/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedoraatiradeonr9_290/cover.jpg" />
+    </item>
+    
+    <item>
+      <title>Pinebook Pro - Fedora setup</title>
+      <link>https://demo.k8s.babelvis.io/posts/pipebook-pro/2025-07-07-fedora-fix-after-install/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/pipebook-pro/2025-07-07-fedora-fix-after-install/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Xiaomi POCO F1 - K3S Cluster on postmarketos</title>
+      <link>https://demo.k8s.babelvis.io/posts/xiaomi-poco-f1/2023-10-31-k3s-on-arm-postmarketos/</link>
+      <pubDate>Tue, 31 Oct 2023 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/xiaomi-poco-f1/2023-10-31-k3s-on-arm-postmarketos/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
