@@ -4,12 +4,18 @@
 
   <url>
     <loc>https://demo.k8s.babelvis.io/</loc>
-    <lastmod>2025-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-18T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://demo.k8s.babelvis.io/posts/</loc>
+    <lastmod>2026-01-18T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-19-litek8s/</loc>
     <lastmod>2025-12-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

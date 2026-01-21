@@ -9,7 +9,17 @@
     <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
     <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
     <copyright>© 2026 Bas Magré</copyright>
-    <lastBuildDate>Wed, 03 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>StarFive VisionFive 2 Lite - Kubernetes cluster</title>
+      <link>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-19-litek8s/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-19-litek8s/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-19-litek8s/cover.png" />
+    </item>
     
     <item>
       <title>StarFive VisionFive 2 Lite - U-boot and Kernel with external GPU ATI Radeon R9 290</title>
