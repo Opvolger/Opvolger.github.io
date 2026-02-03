@@ -15,19 +15,19 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-19-litek8s/</loc>
+    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-19-lite-k8s/</loc>
     <lastmod>2025-12-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-03-liteubootkernel/</loc>
+    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-03-lite-uboot-kernel/</loc>
     <lastmod>2025-12-03T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedoraatiradeonr9_290/</loc>
+    <loc>https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedora-ati-radeon-r9_290/</loc>
     <lastmod>2025-11-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -39,7 +39,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-06-09-debiantrixieamdgpu/</loc>
+    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-06-09-debiantrixie-amdgpu/</loc>
     <lastmod>2025-06-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -63,25 +63,25 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonhd5850/</loc>
+    <loc>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-11-20-opensuse-ati-radeon-hd5850/</loc>
     <lastmod>2024-11-20T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonr9_290/</loc>
+    <loc>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-10-19-opensuse-ati-radeon-r9_290/</loc>
     <lastmod>2024-10-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2024-09-02-opensuseatiradeonr9_290_mainline/</loc>
+    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2024-09-02-opensuse-ati-radeon-r9_290_mainline/</loc>
     <lastmod>2024-09-02T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-11-20-ubuntuatiradeonr9_290_2023_11_20/</loc>
+    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-11-20-ubuntu-ati-radeon-r9_290/</loc>
     <lastmod>2023-11-20T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -93,19 +93,19 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-04-05-ubuntuatiradeonr9_290/</loc>
+    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-04-05-ubuntu-ati-radeon-r9_290/</loc>
     <lastmod>2023-04-05T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-02-27-fedoraatiradeon5450/</loc>
+    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-02-27-fedora-ati-radeon5450/</loc>
     <lastmod>2023-02-27T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/</loc>
+    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2023-02-05-opensuse-ati-radeon-r9_290/</loc>
     <lastmod>2023-02-05T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

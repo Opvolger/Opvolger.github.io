@@ -13,22 +13,22 @@
     
     <item>
       <title>Milk-V Jupiter - OpenSUSE Tumbleweed with dedicated GPU ATI Radeon HD 5850</title>
-      <link>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonhd5850/</link>
+      <link>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-11-20-opensuse-ati-radeon-hd5850/</link>
       <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
       <author>bas@opvolger.net (Bas Magré)</author>
-      <guid>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonhd5850/</guid>
+      <guid>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-11-20-opensuse-ati-radeon-hd5850/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonhd5850/cover.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-11-20-opensuse-ati-radeon-hd5850/cover.png" />
     </item>
     
     <item>
       <title>Milk-V Jupiter - OpenSUSE Tumbleweed with external GPU ATI Radeon R9 290</title>
-      <link>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonr9_290/</link>
+      <link>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-10-19-opensuse-ati-radeon-r9_290/</link>
       <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
       <author>bas@opvolger.net (Bas Magré)</author>
-      <guid>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonr9_290/</guid>
+      <guid>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-10-19-opensuse-ati-radeon-r9_290/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/milk-v-jupiter/opensuseatiradeonr9_290/cover.jpeg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-10-19-opensuse-ati-radeon-r9_290/cover.jpeg" />
     </item>
     
   </channel>

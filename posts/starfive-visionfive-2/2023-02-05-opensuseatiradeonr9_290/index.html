@@ -1277,6 +1277,10 @@
 The OpenSUSE Tumbleweed image uses a kernel that does not yet have the PCIe patches of the StarFive VisionFive 2. More information about what is and is not main-stream in the kernel can be found here: <a href="https://rvspace.org/en/project/JH7110_Upstream_Plan"  target="_blank" rel="noreferrer">site</a></p>
 <p>So I have created my own kernel and updated the efi/root partition a little bit to boot OpenSUSE Tumbleweed with external GPU.</p>
 <p>See the YouTube Video for the end result: <a href="https://www.youtube.com/watch?v=65Ruq_NOBe8"  target="_blank" rel="noreferrer">video</a></p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/65Ruq_NOBe8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
 <p>The entire manual works from 1 directory. In my case ~/OpenSUSETumbleweed</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mkdir OpenSUSETumbleweed
 </span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> OpenSUSETumbleweed/</span></span></code></pre></div></div>
@@ -1302,29 +1306,41 @@ This is about 11 EURO on amazon, so no big deal&hellip; <a href="https://www.ama
     class="my-0 rounded-md"
     loading="lazy"
     decoding="async"
-    fetchpriority="low"
+    fetchpriority="auto"
     alt="setup StarFive VisionFive 2"
-    src="UbuntuATIRadeonR9_290/setup_001.jpeg"
-    ></figure>
+    width="2048"
+    height="1152"
+    src="/posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/setup_001_hu_60ba47f13dbb9c31.jpeg"
+    srcset="/posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/setup_001_hu_60ba47f13dbb9c31.jpeg 800w, /posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/setup_001_hu_ff0ca59c94c75a11.jpeg 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/setup_001.jpeg"></figure>
 
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
     decoding="async"
-    fetchpriority="low"
+    fetchpriority="auto"
     alt="setup StarFive VisionFive 2"
-    src="UbuntuATIRadeonR9_290/setup_002.jpeg"
-    ></figure>
+    width="2048"
+    height="1152"
+    src="/posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/setup_002_hu_9f290cb7ed526c7c.jpeg"
+    srcset="/posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/setup_002_hu_9f290cb7ed526c7c.jpeg 800w, /posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/setup_002_hu_8cbc1eae61c01bc1.jpeg 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/setup_002.jpeg"></figure>
 
 or
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
     decoding="async"
-    fetchpriority="low"
+    fetchpriority="auto"
     alt="setup StarFive VisionFive 2"
-    src="FedoraATIRadeon5450/setup.png"
-    ></figure>
+    width="2048"
+    height="1152"
+    src="/posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/setup_hu_568105b81d476cd4.png"
+    srcset="/posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/setup_hu_568105b81d476cd4.png 800w, /posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/setup_hu_8faf26f3e298d850.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/posts/starfive-visionfive-2/2023-02-05-opensuseatiradeonr9_290/setup.png"></figure>
 </p>
 
 <h2 class="relative group">Downloads
@@ -1352,7 +1368,7 @@ or
     </span>
     
 </h3>
-<p>I have already described this in the Ubuntu 23.10 manual <a href="UbuntuATIRadeonR9_290_2023_11_20.md" >here</a>.</p>
+<p>I have already described this in the Ubuntu 23.10 manual <a href="../2023-11-20-UbuntuATIRadeonR9_290_2023_11_20" >here</a>.</p>
 <p>But there is a newer version so here a short version:</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># download firmware</span>
 </span></span><span class="line"><span class="cl">$ wget https://github.com/starfive-tech/VisionFive2/releases/download/JH7110_VF2_515_v5.10.3/u-boot-spl.bin.normal.out
