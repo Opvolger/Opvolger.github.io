@@ -12,13 +12,13 @@
     <lastBuildDate>Mon, 09 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/categories/risc-v/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>CSI provider SMB for RISC-V Kubernetes cluster</title>
+      <title>Building RISC-V Docker images for CSI provider (SMB)</title>
       <link>https://demo.k8s.babelvis.io/posts/risc-v/2026-02-09-kubernetes-riscv-csi-provider-smb/</link>
       <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
       <author>bas@opvolger.net (Bas Magré)</author>
       <guid>https://demo.k8s.babelvis.io/posts/risc-v/2026-02-09-kubernetes-riscv-csi-provider-smb/</guid>
       <description></description>
-      
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/risc-v/2026-02-09-kubernetes-riscv-csi-provider-smb/cover.png" />
     </item>
     
     <item>
