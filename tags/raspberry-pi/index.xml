@@ -13,12 +13,12 @@
     
     <item>
       <title>Raspberry Pi 5 - Fedora with AMDGPU and Halflife 2</title>
-      <link>https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedora-ati-radeon-r9_290/</link>
+      <link>https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedora-ati-radeon-r9-290/</link>
       <pubDate>Sun, 09 Nov 2025 00:00:00 +0000</pubDate>
       <author>bas@opvolger.net (Bas Magré)</author>
-      <guid>https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedora-ati-radeon-r9_290/</guid>
+      <guid>https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedora-ati-radeon-r9-290/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedora-ati-radeon-r9_290/cover.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedora-ati-radeon-r9-290/cover.jpg" />
     </item>
     
   </channel>

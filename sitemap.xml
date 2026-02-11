@@ -3,14 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>https://demo.k8s.babelvis.io/posts/risc-v/2026-02-09-kubernetes-riscv-csi-provider-smb/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://demo.k8s.babelvis.io/</loc>
-    <lastmod>2026-01-18T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://demo.k8s.babelvis.io/posts/</loc>
-    <lastmod>2026-01-18T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -27,7 +33,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedora-ati-radeon-r9_290/</loc>
+    <loc>https://demo.k8s.babelvis.io/posts/raspberrypi5/2025-11-09-fedora-ati-radeon-r9-290/</loc>
     <lastmod>2025-11-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -69,7 +75,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-10-19-opensuse-ati-radeon-r9_290/</loc>
+    <loc>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-10-19-opensuse-ati-radeon-r9-290/</loc>
     <lastmod>2024-10-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

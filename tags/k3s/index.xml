@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>K3s on Opvolger</title>
+    <link>https://demo.k8s.babelvis.io/tags/k3s/</link>
+    <description>Recent content in K3s on Opvolger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
+    <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
+    <copyright>© 2026 Bas Magré</copyright>
+    <lastBuildDate>Fri, 19 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/k3s/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>StarFive VisionFive 2 Lite - Kubernetes cluster</title>
+      <link>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-19-lite-k8s/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-19-lite-k8s/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2025-12-19-lite-k8s/cover.png" />
+    </item>
+    
+  </channel>
+</rss>

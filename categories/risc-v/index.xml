@@ -9,7 +9,17 @@
     <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
     <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
     <copyright>© 2026 Bas Magré</copyright>
-    <lastBuildDate>Fri, 19 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/categories/risc-v/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/categories/risc-v/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CSI provider SMB for RISC-V Kubernetes cluster</title>
+      <link>https://demo.k8s.babelvis.io/posts/risc-v/2026-02-09-kubernetes-riscv-csi-provider-smb/</link>
+      <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/risc-v/2026-02-09-kubernetes-riscv-csi-provider-smb/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>StarFive VisionFive 2 Lite - Kubernetes cluster</title>
@@ -83,12 +93,12 @@
     
     <item>
       <title>Milk-V Jupiter - OpenSUSE Tumbleweed with external GPU ATI Radeon R9 290</title>
-      <link>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-10-19-opensuse-ati-radeon-r9_290/</link>
+      <link>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-10-19-opensuse-ati-radeon-r9-290/</link>
       <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
       <author>bas@opvolger.net (Bas Magré)</author>
-      <guid>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-10-19-opensuse-ati-radeon-r9_290/</guid>
+      <guid>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-10-19-opensuse-ati-radeon-r9-290/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-10-19-opensuse-ati-radeon-r9_290/cover.jpeg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2024-10-19-opensuse-ati-radeon-r9-290/cover.jpeg" />
     </item>
     
     <item>
