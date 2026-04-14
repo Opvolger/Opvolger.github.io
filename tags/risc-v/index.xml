@@ -9,7 +9,17 @@
     <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
     <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
     <copyright>© 2026 Bas Magré</copyright>
-    <lastBuildDate>Mon, 09 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/risc-v/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/risc-v/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Multiple architectures Kubernetes cluster AMD/ARM/RISC-V</title>
+      <link>https://demo.k8s.babelvis.io/posts/10inch-rack/2026-04-14-multi-arch-k8s-cluster/</link>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/10inch-rack/2026-04-14-multi-arch-k8s-cluster/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/10inch-rack/2026-04-14-multi-arch-k8s-cluster/cover.jpg" />
+    </item>
     
     <item>
       <title>Building RISC-V Docker images for CSI provider (SMB)</title>

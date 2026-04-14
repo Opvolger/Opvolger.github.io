@@ -9,12 +9,32 @@
     <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
     <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
     <copyright>© 2026 Bas Magré</copyright>
-    <lastBuildDate>Mon, 09 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>10inch-Rack</title>
+      <link>https://demo.k8s.babelvis.io/tags/10inch-rack/</link>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/10inch-rack/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://demo.k8s.babelvis.io/tags/docker/</link>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/docker/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>K0s</title>
       <link>https://demo.k8s.babelvis.io/tags/k0s/</link>
-      <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
       <author>bas@opvolger.net (Bas Magré)</author>
       <guid>https://demo.k8s.babelvis.io/tags/k0s/</guid>
       <description></description>
@@ -24,7 +44,7 @@
     <item>
       <title>Kubernetes</title>
       <link>https://demo.k8s.babelvis.io/tags/kubernetes/</link>
-      <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
       <author>bas@opvolger.net (Bas Magré)</author>
       <guid>https://demo.k8s.babelvis.io/tags/kubernetes/</guid>
       <description></description>
@@ -34,9 +54,19 @@
     <item>
       <title>RISC-V</title>
       <link>https://demo.k8s.babelvis.io/tags/risc-v/</link>
-      <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
       <author>bas@opvolger.net (Bas Magré)</author>
       <guid>https://demo.k8s.babelvis.io/tags/risc-v/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>3d-Print</title>
+      <link>https://demo.k8s.babelvis.io/tags/3d-print/</link>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/3d-print/</guid>
       <description></description>
       
     </item>

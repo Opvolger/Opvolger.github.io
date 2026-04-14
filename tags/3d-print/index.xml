@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3d-Print on Opvolger</title>
+    <link>https://demo.k8s.babelvis.io/tags/3d-print/</link>
+    <description>Recent content in 3d-Print on Opvolger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
+    <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
+    <copyright>© 2026 Bas Magré</copyright>
+    <lastBuildDate>Mon, 30 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/3d-print/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Build my 10inch-rack</title>
+      <link>https://demo.k8s.babelvis.io/posts/10inch-rack/2026-03-30-build-10inch-rack/</link>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/10inch-rack/2026-03-30-build-10inch-rack/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/10inch-rack/2026-03-30-build-10inch-rack/cover.jpg" />
+    </item>
+    
+  </channel>
+</rss>
