@@ -9,7 +9,27 @@
     <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
     <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
     <copyright>© 2026 Bas Magré</copyright>
-    <lastBuildDate>Tue, 14 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RISC-V</title>
+      <link>https://demo.k8s.babelvis.io/tags/risc-v/</link>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/risc-v/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Starfive-Visionfive-2</title>
+      <link>https://demo.k8s.babelvis.io/tags/starfive-visionfive-2/</link>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/starfive-visionfive-2/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>10inch-Rack</title>
@@ -52,16 +72,6 @@
     </item>
     
     <item>
-      <title>RISC-V</title>
-      <link>https://demo.k8s.babelvis.io/tags/risc-v/</link>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
-      <author>bas@opvolger.net (Bas Magré)</author>
-      <guid>https://demo.k8s.babelvis.io/tags/risc-v/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>3d-Print</title>
       <link>https://demo.k8s.babelvis.io/tags/3d-print/</link>
       <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
@@ -77,16 +87,6 @@
       <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
       <author>bas@opvolger.net (Bas Magré)</author>
       <guid>https://demo.k8s.babelvis.io/tags/k3s/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Starfive-Visionfive-2</title>
-      <link>https://demo.k8s.babelvis.io/tags/starfive-visionfive-2/</link>
-      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
-      <author>bas@opvolger.net (Bas Magré)</author>
-      <guid>https://demo.k8s.babelvis.io/tags/starfive-visionfive-2/</guid>
       <description></description>
       
     </item>

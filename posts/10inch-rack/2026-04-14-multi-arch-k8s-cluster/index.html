@@ -280,7 +280,7 @@
     "keywords": ["RISC-V","10inch-rack","Kubernetes","Docker","k0s"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1382"
+    "wordCount": "1287"
   },
   {
     "@context": "https://schema.org",
@@ -978,7 +978,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-04-14T00:00:00&#43;00:00">14 April 2026</time><span class="px-2 text-primary-500">&middot;</span><span>1382 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">7 mins</span>
+      <time datetime="2026-04-14T00:00:00&#43;00:00">14 April 2026</time><span class="px-2 text-primary-500">&middot;</span><span>1287 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">7 mins</span>
     
 
     
@@ -1484,7 +1484,7 @@
 <li>Install <code>netplan.io</code> and other stuff.</li>
 <li>Add some firewalld rules on all the nodes for the cluster (you can also disable the firewall)</li>
 <li>Create a netplan yaml file for static ip and apply this setting for all the nodes.</li>
-<li>Set ARP kernel settings on all the nodes, so virtual IP-adres can be set. <code>sysctl -w net.ipv4.conf.all.arp_announce=2</code> and <code>sysctl -w net.ipv4.conf.all.arp_ignore=1</code></li>
+<li>Set ARP kernel settings on all the nodes, so virtual IP-address can be set. <code>sysctl -w net.ipv4.conf.all.arp_announce=2</code> and <code>sysctl -w net.ipv4.conf.all.arp_ignore=1</code></li>
 <li>Download k0sctl from k0sproject, this can setup a cluster.</li>
 <li>Generate k0sctl.yaml for the cluster</li>
 <li>Run <code>k0sctl apply --config k0sctl.yaml</code>.</li>
@@ -1532,17 +1532,6 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">metadata</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">k0s</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">spec</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># images:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#   calico:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#     cni:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#       image: quay.io/k0sproject/calico-cni</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#       version: v3.29.7-1</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#     node:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#       image: quay.io/k0sproject/calico-node</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#       version: v3.29.7-1</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#     kubecontrollers:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#       image: quay.io/k0sproject/calico-kube-controllers</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#       version: v3.29.7-1</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">api</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">externalAddress</span><span class="p">:</span><span class="w"> </span><span class="m">192.168.8.1</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">k0sApiPort</span><span class="p">:</span><span class="w"> </span><span class="m">9443</span><span class="w">
@@ -1566,12 +1555,6 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">csi-driver-smb</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">https://raw.githubusercontent.com/kubernetes-csi/csi-driver-smb/master/charts</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">charts</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># docker buildx build --platform linux/amd64,linux/arm64,linux/riscv64 --tag opvolger/metallb-controller:v0.15.3  --push --file controller/Dockerfile .</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># docker buildx build --platform linux/amd64,linux/arm64,linux/riscv64 --tag opvolger/metallb-speaker:v0.15.3  --push --file speaker/Dockerfile .</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># helm install metallb metallb/metallb --values templates/metallb.yaml -n metallb-system</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># helm uninstall metallb -n metallb-system</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># kubectl apply -f templates/ip-pool.yaml -n metallb-system</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># https://oneuptime.com/blog/post/2026-02-09-kube-proxy-strict-arp-metallb/view</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">metallb</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">chartname</span><span class="p">:</span><span class="w"> </span><span class="l">metallb/metallb</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="m">0.15.3</span><span class="w">
@@ -1589,9 +1572,6 @@
 </span></span></span><span class="line"><span class="cl"><span class="sd">                    # pullPolicy: Always
 </span></span></span><span class="line"><span class="cl"><span class="sd">                    repository: opvolger/metallb-speaker
 </span></span></span><span class="line"><span class="cl"><span class="sd">                    tag: v0.15.3</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># helm install traefik traefik/traefik --values templates/traefik.yaml -n traefik-system --version 39.0.7</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># helm uninstall traefik -n traefik-system</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># https://oneuptime.com/blog/post/2026-01-07-metallb-traefik-ingress/view</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">traefik</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">chartname</span><span class="p">:</span><span class="w"> </span><span class="l">traefik/traefik</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="m">39.0.7</span><span class="w">
@@ -1794,6 +1774,19 @@
           
         </span>
         <span class="flex flex-col items-end">
+          
+            <a
+              class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/posts/starfive-visionfive-2/2026-04-24-debian-vf2-lite/">
+              <span class="leading-6">
+                StarFive VisionFive 2 Lite - Debian Trixie&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+              </span>
+            </a>
+            
+              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2026-04-24T00:00:00&#43;00:00">24 April 2026</time>
+              </span>
+            
           
         </span>
       </div>

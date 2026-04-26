@@ -3,19 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/10inch-rack/2026-04-14-multi-arch-k8s-cluster/</loc>
-    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://demo.k8s.babelvis.io/</loc>
-    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-24T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://demo.k8s.babelvis.io/posts/</loc>
+    <lastmod>2026-04-24T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2026-04-24-debian-vf2-lite/</loc>
+    <lastmod>2026-04-24T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://demo.k8s.babelvis.io/posts/10inch-rack/2026-04-14-multi-arch-k8s-cluster/</loc>
     <lastmod>2026-04-14T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
