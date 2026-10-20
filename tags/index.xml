@@ -9,12 +9,62 @@
     <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
     <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
     <copyright>© 2026 Bas Magré</copyright>
-    <lastBuildDate>Fri, 24 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Oct 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AMDGPU</title>
+      <link>https://demo.k8s.babelvis.io/tags/amdgpu/</link>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/amdgpu/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Debian</title>
+      <link>https://demo.k8s.babelvis.io/tags/debian/</link>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/debian/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Kernel</title>
+      <link>https://demo.k8s.babelvis.io/tags/kernel/</link>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/kernel/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://demo.k8s.babelvis.io/tags/linux/</link>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/linux/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Milk-v-Jupiter</title>
+      <link>https://demo.k8s.babelvis.io/tags/milk-v-jupiter/</link>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/milk-v-jupiter/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>RISC-V</title>
       <link>https://demo.k8s.babelvis.io/tags/risc-v/</link>
-      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
       <author>bas@opvolger.net (Bas Magré)</author>
       <guid>https://demo.k8s.babelvis.io/tags/risc-v/</guid>
       <description></description>
@@ -127,16 +177,6 @@
       <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
       <author>bas@opvolger.net (Bas Magré)</author>
       <guid>https://demo.k8s.babelvis.io/tags/pinebook-pro/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Milk-v-Jupiter</title>
-      <link>https://demo.k8s.babelvis.io/tags/milk-v-jupiter/</link>
-      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
-      <author>bas@opvolger.net (Bas Magré)</author>
-      <guid>https://demo.k8s.babelvis.io/tags/milk-v-jupiter/</guid>
       <description></description>
       
     </item>
