@@ -3,19 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2026-10-20-debian-trixie-radeon-r9-290/</loc>
-    <lastmod>2026-10-20T00:00:00+00:00</lastmod>
+    <loc>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2026-11-04-half-life-2-source-engine/</loc>
+    <lastmod>2026-11-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://demo.k8s.babelvis.io/</loc>
-    <lastmod>2026-10-20T00:00:00+00:00</lastmod>
+    <lastmod>2026-11-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://demo.k8s.babelvis.io/posts/</loc>
+    <lastmod>2026-11-04T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2026-10-20-debian-trixie-radeon-r9-290/</loc>
     <lastmod>2026-10-20T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

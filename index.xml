@@ -9,7 +9,17 @@
     <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
     <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
     <copyright>© 2026 Bas Magré</copyright>
-    <lastBuildDate>Tue, 20 Oct 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Milk-V Jupiter - Half-Life 2 native on RISC-V</title>
+      <link>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2026-11-04-half-life-2-source-engine/</link>
+      <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2026-11-04-half-life-2-source-engine/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/milk-v-jupiter/2026-11-04-half-life-2-source-engine/cover.jpg" />
+    </item>
     
     <item>
       <title>Milk-V Jupiter - Debian Trixie with external GPU AMD Radeon R9 290</title>
