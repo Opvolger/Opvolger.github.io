@@ -9,7 +9,77 @@
     <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
     <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
     <copyright>© 2026 Bas Magré</copyright>
-    <lastBuildDate>Wed, 04 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Half-Life 2</title>
+      <link>https://demo.k8s.babelvis.io/tags/half-life-2/</link>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/half-life-2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>HDMI</title>
+      <link>https://demo.k8s.babelvis.io/tags/hdmi/</link>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/hdmi/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Mesa</title>
+      <link>https://demo.k8s.babelvis.io/tags/mesa/</link>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/mesa/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>PowerVR</title>
+      <link>https://demo.k8s.babelvis.io/tags/powervr/</link>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/powervr/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>RISC-V</title>
+      <link>https://demo.k8s.babelvis.io/tags/risc-v/</link>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/risc-v/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Source Engine</title>
+      <link>https://demo.k8s.babelvis.io/tags/source-engine/</link>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/source-engine/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Starfive-Visionfive-2</title>
+      <link>https://demo.k8s.babelvis.io/tags/starfive-visionfive-2/</link>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/tags/starfive-visionfive-2/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>AMDGPU</title>
@@ -32,41 +102,11 @@
     </item>
     
     <item>
-      <title>Half-Life 2</title>
-      <link>https://demo.k8s.babelvis.io/tags/half-life-2/</link>
-      <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
-      <author>bas@opvolger.net (Bas Magré)</author>
-      <guid>https://demo.k8s.babelvis.io/tags/half-life-2/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Milk-v-Jupiter</title>
       <link>https://demo.k8s.babelvis.io/tags/milk-v-jupiter/</link>
       <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
       <author>bas@opvolger.net (Bas Magré)</author>
       <guid>https://demo.k8s.babelvis.io/tags/milk-v-jupiter/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>RISC-V</title>
-      <link>https://demo.k8s.babelvis.io/tags/risc-v/</link>
-      <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
-      <author>bas@opvolger.net (Bas Magré)</author>
-      <guid>https://demo.k8s.babelvis.io/tags/risc-v/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Source Engine</title>
-      <link>https://demo.k8s.babelvis.io/tags/source-engine/</link>
-      <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
-      <author>bas@opvolger.net (Bas Magré)</author>
-      <guid>https://demo.k8s.babelvis.io/tags/source-engine/</guid>
       <description></description>
       
     </item>
@@ -107,16 +147,6 @@
       <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
       <author>bas@opvolger.net (Bas Magré)</author>
       <guid>https://demo.k8s.babelvis.io/tags/linux/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Starfive-Visionfive-2</title>
-      <link>https://demo.k8s.babelvis.io/tags/starfive-visionfive-2/</link>
-      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
-      <author>bas@opvolger.net (Bas Magré)</author>
-      <guid>https://demo.k8s.babelvis.io/tags/starfive-visionfive-2/</guid>
       <description></description>
       
     </item>
