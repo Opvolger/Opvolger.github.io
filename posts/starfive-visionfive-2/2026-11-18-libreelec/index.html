@@ -119,7 +119,7 @@
 		<meta property="article:tag" content="Starfive-Visionfive-2">
 		<meta property="article:tag" content="RISC-V">
 		<meta property="article:tag" content="LibreELEC">
-		<meta property="article:tag" content="Kodi">
+		<meta property="article:tag" content="KODI">
 		<meta property="og:image" content="https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2026-11-18-libreelec/cover.jpg">
 
   
@@ -305,7 +305,7 @@
     "keywords": ["starfive-visionfive-2","RISC-V","LibreELEC","Kodi"],
     
     "mainEntityOfPage": "https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2026-11-18-libreelec/",
-    "wordCount":  980 
+    "wordCount":  1085 
   },
   {
     "@context": "https://schema.org",
@@ -1059,7 +1059,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-11-18T00:00:00&#43;00:00">18 November 2026</time><span class="px-2 text-primary-500">&middot;</span><span>980 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
+      <time datetime="2026-11-18T00:00:00&#43;00:00">18 November 2026</time><span class="px-2 text-primary-500">&middot;</span><span>1085 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span>
     
 
     
@@ -1326,6 +1326,7 @@
         <li><a href="#random-resets">Random resets</a></li>
       </ul>
     </li>
+    <li><a href="#download-and-flash">Download and flash</a></li>
     <li><a href="#pull-request">Pull request</a>
       <ul>
         <li><a href="#option-1-on-your-own-machine">Option 1: on your own machine</a></li>
@@ -1357,6 +1358,7 @@
         <li><a href="#random-resets">Random resets</a></li>
       </ul>
     </li>
+    <li><a href="#download-and-flash">Download and flash</a></li>
     <li><a href="#pull-request">Pull request</a>
       <ul>
         <li><a href="#option-1-on-your-own-machine">Option 1: on your own machine</a></li>
@@ -1505,6 +1507,20 @@
 <p>First Claude found a real bug: the StarFive device tree has CPU speeds for two chips (1.5 GHz and 1.25 GHz), and the StarFive U-Boot removes the wrong set. The mainline U-Boot does not, so the CPU switched between both sets. That is fixed now (and the Lite no longer runs at 1.5 GHz). But the resets were still there!</p>
 <p>Then we let the kernel print everything on the serial console and played movies for hours. Reset again, and not one message from the kernel. Nothing. So the board was reset from the outside&hellip;</p>
 <p>Another power supply. 96 minutes of movies (H.264, HEVC and 10-bit), no reset. It was my power supply!</p>
+
+<h2 class="relative group">Download and flash
+    <div id="download-and-flash" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#download-and-flash" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Don&rsquo;t want to build it yourself? There is a (test) release with an image you can flash right away: <a href="https://github.com/Opvolger/LibreELEC.tv/releases/tag/jh7110-20261118"  target="_blank" rel="noreferrer">LibreELEC 13.0-devel for StarFive VisionFive 2 / 2 Lite</a>.</p>
+<p>Download the <code>.img.gz</code> and write it to a microSD card (or NVMe drive). Check the device name first (with <code>lsblk</code>), on my machine it was <code>/dev/sda</code>!</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">zcat LibreELEC-JH7110.riscv64-13.0-devel-20261118202807-b2c649c-visionfive2.img.gz <span class="p">|</span> sudo dd <span class="nv">of</span><span class="o">=</span>/dev/sda <span class="nv">bs</span><span class="o">=</span>4M <span class="nv">conv</span><span class="o">=</span>fsync <span class="nv">status</span><span class="o">=</span>progress</span></span></code></pre></div></div>
+<p>Put the card in the board and power it on. It works with the U-Boot that is already in the SPI flash. On a VisionFive 2 you can also set the DIP switches to SD card boot mode.</p>
 
 <h2 class="relative group">Pull request
     <div id="pull-request" class="anchor"></div>
