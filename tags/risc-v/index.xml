@@ -9,7 +9,17 @@
     <managingEditor>bas@opvolger.net (Bas Magré)</managingEditor>
     <webMaster>bas@opvolger.net (Bas Magré)</webMaster>
     <copyright>© 2026 Bas Magré</copyright>
-    <lastBuildDate>Sat, 14 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/risc-v/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.k8s.babelvis.io/tags/risc-v/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>StarFive VisionFive 2 (Lite) - LibreELEC and Kodi</title>
+      <link>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2026-11-18-libreelec/</link>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+      <author>bas@opvolger.net (Bas Magré)</author>
+      <guid>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2026-11-18-libreelec/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2026-11-18-libreelec/cover.jpg" />
+    </item>
     
     <item>
       <title>StarFive VisionFive 2 - Half-Life 2 on the onboard GPU</title>

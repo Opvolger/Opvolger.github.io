@@ -4,13 +4,19 @@
 
   <url>
     <loc>https://demo.k8s.babelvis.io/</loc>
-    <lastmod>2026-11-14T00:00:00+00:00</lastmod>
+    <lastmod>2026-11-18T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://demo.k8s.babelvis.io/posts/</loc>
-    <lastmod>2026-11-14T00:00:00+00:00</lastmod>
+    <lastmod>2026-11-18T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://demo.k8s.babelvis.io/posts/starfive-visionfive-2/2026-11-18-libreelec/</loc>
+    <lastmod>2026-11-18T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
